@@ -1,0 +1,205 @@
+@import '@vue-flow/core/dist/style.css';
+@import '@vue-flow/core/dist/theme-default.css';
+@import '@vue-flow/controls/dist/style.css';
+@import '@vue-flow/minimap/dist/style.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background-color: #1a1a1a;
+    --node-color: #2a2a2a;
+    --text-color: #fff;
+    --border-color: #333;
+    --sidebar-bg: #242424;
+    --trigger-color: #ff8a65;
+    --action-color: #64b5f6;
+    --condition-color: #81c784;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+.dnd-flow {
+    flex-direction: column;
+    display: flex;
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
+@media screen and (min-width: 768px) {
+    .dnd-flow {
+        flex-direction: row;
+    }
+}
+
+.dnd-flow aside {
+    padding: 15px 10px;
+    font-size: 12px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    min-width: 200px;
+}
+
+.dnd-flow aside .description {
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.dnd-flow aside .nodes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dnd-flow aside .nodes > * {
+    cursor: grab;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.dnd-flow aside .nodes > *:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.vue-flow__node-trigger {
+    background-color: var(--trigger-color);
+    color: white;
+}
+
+.vue-flow__node-action {
+    background-color: var(--action-color);
+    color: white;
+}
+
+.vue-flow__node-condition {
+    background-color: var(--condition-color);
+    color: white;
+}
+
+.vue-flow-wrapper {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.vue-flow__node {
+    padding: 10px;
+    border-radius: 5px;
+    width: auto;
+    min-width: 150px;
+    font-size: 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    background-color: var(--node-color);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.vue-flow__handle {
+    width: 8px;
+    height: 8px;
+    background: var(--text-color);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+}
+
+.vue-flow__edge {
+    stroke: var(--text-color);
+}
+
+.vue-flow__edge-path {
+    stroke-width: 2;
+}
+
+.vue-flow__controls {
+    background: var(--sidebar-bg);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.vue-flow__controls button {
+    background: var(--node-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 4px;
+}
+
+.vue-flow__controls button:hover {
+    background: var(--sidebar-bg);
+}
+
+.vue-flow__minimap {
+    background-color: var(--sidebar-bg);
+    border-radius: 8px;
+}
+
+.node-content {
+    padding: 8px;
+}
+
+.node-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+.node-content input {
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.node-content input:focus {
+    outline: none;
+    border-color: var(--text-color);
+}
+
+/* Custom node styles */
+.trigger-node {
+    background-color: var(--trigger-color);
+}
+
+.action-node {
+    background-color: var(--action-color);
+}
+
+.condition-node {
+    background-color: var(--condition-color);
+}
+
+/* Drop indicator */
+.vue-flow__drop-indicator {
+    background: var(--text-color);
+    border: 2px solid var(--border-color);
+}
+
+/* Selection styles */
+.vue-flow__node.selected {
+    box-shadow: 0 0 0 2px var(--text-color);
+}
+
+/* Connection line */
+.vue-flow__connection-path {
+    stroke: var(--text-color);
+    stroke-width: 2;
+}
+
+/* Edge label */
+.vue-flow__edge-label {
+    background: var(--node-color);
+    color: var(--text-color);
+    padding: 2px 4px;
+    border-radius: 4px;
+    font-size: 10px;
+}
