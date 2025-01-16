@@ -6,10 +6,13 @@
     "dev": "next dev -p 3100",
     "build": "next build",
     "start": "next start -p 3100",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:css": "stylelint '**/*.{css,scss,sass,vue,html,jsx,tsx}'",
+    "lint:css:fix": "stylelint '**/*.{css,scss,sass,vue,html,jsx,tsx}' --fix"
   },
   "dependencies": {
     "next": "15.1.4",
+    "postcss-styled-syntax": "^0.7.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "reactflow": "^11.11.4"
@@ -19,12 +22,16 @@
     "@types/node": "^20.17.14",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
+    "@types/stylelint": "^14.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.2",
     "postcss": "^8",
+    "postcss-html": "^1.8.0",
     "prettier": "^3.4.2",
+    "stylelint": "^16.13.2",
+    "stylelint-config-standard": "^37.0.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
