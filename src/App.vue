@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import FlowEditor from './components/FlowEditor/FlowEditor.vue';
+import FlowEditor from "./components/FlowEditor/FlowEditor.vue";
 </script>
 
 <style>
@@ -13,4 +13,5 @@ import FlowEditor from './components/FlowEditor/FlowEditor.vue';
   width: 100vw;
   height: 100vh;
 }
+
 </style>

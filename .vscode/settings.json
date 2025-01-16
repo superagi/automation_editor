@@ -1,0 +1,18 @@
+{
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.enable": true,
+  "stylelint.validate": ["css", "scss", "vue"],
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "explicit"
+  },
+  "editor.quickSuggestions": {
+    "strings": false
+  },
+  "stylelint.reportNeedlessDisables": false,
+  "stylelint.reportInvalidScopeDisables": false,
+  "editor.formatOnType": false,
+  "editor.formatOnPaste": false
+}

@@ -61,6 +61,6 @@ aside {
 
 .nodes > *:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 8px rgba(0 0 0 / 3%);
 }
 </style>

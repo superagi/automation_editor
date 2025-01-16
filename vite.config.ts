@@ -1,10 +1,16 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import viteCompression from "vite-plugin-compression"
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import viteCompression from "vite-plugin-compression";
+import StylelintPlugin from "vite-plugin-stylelint";
 
 export default defineConfig({
   plugins: [
     vue(),
+    StylelintPlugin({
+      fix: true, // This enables auto-fixing
+      files: ["src/**/*.{vue,css,scss}"],
+      lintOnStart: false,
+    }),
     viteCompression({
       algorithm: "brotliCompress",
       ext: ".br",
@@ -19,7 +25,7 @@ export default defineConfig({
   base: "/",
   resolve: {
     alias: {
-      '@': '/src'
+      "@": "/src",
     },
   },
   server: {
@@ -32,4 +38,4 @@ export default defineConfig({
   optimizeDeps: {
     include: ["vue", "vue-router", "pinia", "ant-design-vue", "axios"],
   },
-})
+});

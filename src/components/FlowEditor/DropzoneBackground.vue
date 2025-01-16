@@ -55,11 +55,15 @@ const isDarkMode = ref(true); // You can toggle this based on your theme system
 }
 
 .vue-flow__controls {
-  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 2px 1px rgb(0 0 0 / 8%);
 }
 
 .vue-flow__minimap {
   background-color: var(--background-color, #1a1a1a);
   border-radius: 4px;
+}
+
+.vue-flow {
+  color: red;
 }
 </style>
