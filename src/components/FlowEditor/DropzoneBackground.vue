@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { Background } from '@vue-flow/background'
-import { Panel } from '@vue-flow/core'
-import { Controls } from '@vue-flow/controls'
-import { MiniMap } from '@vue-flow/minimap'
+import { Background } from "@vue-flow/background";
+import { Panel } from "@vue-flow/core";
+import { Controls } from "@vue-flow/controls";
+import { MiniMap } from "@vue-flow/minimap";
 </script>
 
 <template>
   <div class="dropzone-background">
     <Background
-        :size="2"
-        :gap="20"
-        :pattern-color="isDarkMode ? '#2a2a2a' : '#BDBDBD'"
+      :size="2"
+      :gap="20"
+      :pattern-color="isDarkMode ? '#2a2a2a' : '#BDBDBD'"
     />
 
     <Panel position="top-right">
@@ -28,9 +28,9 @@ import { MiniMap } from '@vue-flow/minimap'
 </template>
 
 <script lang="ts">
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const isDarkMode = ref(true) // You can toggle this based on your theme system
+const isDarkMode = ref(true); // You can toggle this based on your theme system
 </script>
 
 <style>

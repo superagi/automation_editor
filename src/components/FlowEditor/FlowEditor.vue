@@ -1,103 +1,111 @@
 <script setup>
-import {ref} from 'vue'
-import {VueFlow, useVueFlow, MarkerType} from '@vue-flow/core'
-import DropzoneBackground from './DropzoneBackground.vue'
-import Sidebar from './Sidebar.vue'
-import TriggerNode from './nodes/TriggerNode.vue'
-import ActionNode from './nodes/ActionNode.vue'
-import ConditionNode from './nodes/ConditionNode.vue'
+import { ref } from "vue";
+import {
+  VueFlow,
+  useVueFlow,
+  MarkerType,
+  ConnectionMode,
+} from "@vue-flow/core";
+import DropzoneBackground from "./DropzoneBackground.vue";
+import Sidebar from "./Sidebar.vue";
+import TriggerNode from "./nodes/TriggerNode.vue";
+import ActionNode from "./nodes/ActionNode.vue";
+import ConditionNode from "./nodes/ConditionNode.vue";
 
-const nodes = ref([])
-const edges = ref([])
-const {addNodes, addEdges, project} = useVueFlow()
+const nodes = ref([]);
+const edges = ref([]);
+const { addNodes, addEdges, project } = useVueFlow();
 
-const isDragOver = ref(false)
+const isDragOver = ref(false);
 
 const onDragOver = (event) => {
-  event.preventDefault()
-  isDragOver.value = true
+  event.preventDefault();
+  isDragOver.value = true;
   if (event.dataTransfer) {
-    event.dataTransfer.dropEffect = 'move'
+    event.dataTransfer.dropEffect = "move";
   }
-}
+};
 
 const onDragLeave = () => {
-  isDragOver.value = false
-}
+  isDragOver.value = false;
+};
 
 const onDrop = (event) => {
-  event.preventDefault()
-  isDragOver.value = false
+  event.preventDefault();
+  isDragOver.value = false;
 
   if (event.dataTransfer) {
-    const type = event.dataTransfer.getData('application/vueflow')
+    const type = event.dataTransfer.getData("application/vueflow");
     const position = project({
       x: event.clientX,
       y: event.clientY,
-    })
+    });
 
     const newNode = {
       id: `${type}-${Date.now()}`,
       type,
       position,
-      data: {label: `${type} node`},
-    }
-
-    addNodes([newNode])
+      data: { label: `${type} node` },
+    };
+    addNodes([newNode]);
   }
-}
+};
 
+// Connection logic
 const onConnect = (connection) => {
   const newEdge = {
-    id: `e${connection.source}-${connection.target}`,
+    id: `e${connection.source}-${connection.target}-${connection.sourceHandle}-${connection.targetHandle}`,
     source: connection.source,
     target: connection.target,
-    type: 'bezier',
-    style: { stroke: '#fff' }, // White color
+    sourceHandle: connection.sourceHandle, // Ensure this points to the source handle id
+    targetHandle: connection.targetHandle, // Ensure this points to the target handle id
+    type: "bezier",
+    style: { stroke: "#fff" },
     markerEnd: {
-      type: MarkerType.ArrowClosed,
-      color: '#fff', // White arrow
+      type: "arrowclosed",
+      color: "#fff",
     },
-  }
+  };
 
-  addEdges([newEdge])
-}
+  addEdges([newEdge]);
+};
 </script>
 
 <template>
   <div class="dnd-flow">
-    <Sidebar/>
+    <Sidebar />
 
     <VueFlow
-        v-model:nodes="nodes"
-        v-model:edges="edges"
-        @dragover="onDragOver"
-        @dragleave="onDragLeave"
-        @drop="onDrop"
-        @connect="onConnect"
-        :default-edge-options="{
-          type: 'bezier',
-          style: { stroke: '#fff' },
-          markerEnd: {
-            type: MarkerType.ArrowClosed,
-            color: '#fff',
-          },
-        }"
+      :connection-mode="ConnectionMode.Strict"
+      v-model:nodes="nodes"
+      v-model:edges="edges"
+      @dragover="onDragOver"
+      @dragleave="onDragLeave"
+      @drop="onDrop"
+      @connect="onConnect"
+      :default-edge-options="{
+        type: 'bezier',
+        style: { stroke: '#fff' },
+        markerEnd: {
+          type: MarkerType.ArrowClosed,
+          color: '#fff',
+        },
+      }"
     >
       <template #node-trigger="props">
-        <TriggerNode v-bind="props"/>
+        <TriggerNode v-bind="props" />
       </template>
 
       <template #node-action="props">
-        <ActionNode v-bind="props"/>
+        <ActionNode v-bind="props" />
       </template>
 
       <template #node-condition="props">
-        <ConditionNode v-bind="props"/>
+        <ConditionNode v-bind="props" />
       </template>
 
       <DropzoneBackground
-          :style="{
+        :style="{
           backgroundColor: isDragOver ? '#e7f3ff' : 'transparent',
           transition: 'background-color 0.2s ease',
         }"
