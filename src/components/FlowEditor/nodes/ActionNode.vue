@@ -6,7 +6,7 @@
     <Handle
       :style="{ top: `20px` }"
       type="target"
-      position="left"
+      :position="Position.Left"
       id="left-handle"
     />
     <!-- Dynamically Rendered Handles -->
@@ -39,8 +39,16 @@
 </template>
 
 <script setup lang="ts">
-import { Handle } from "@vue-flow/core";
+import { Handle, Position } from "@vue-flow/core";
 import { ref, computed } from "vue";
+
+// Define the type for a handle configuration
+interface HandleConfig {
+  id: string;
+  type: "source" | "target"; // Matches HandleType
+  position: Position; // Matches Position from VueFlow
+  offset: number;
+}
 
 // Props to receive node data
 defineProps({
@@ -51,11 +59,11 @@ defineProps({
 });
 
 // Reactive state for handles
-const handles = ref([
+const handles = ref<HandleConfig[]>([
   {
     id: "right-handle-1",
     type: "source",
-    position: "right",
+    position: Position.Right, // Use the Position enum
     offset: 120, // px from top
   },
 ]);
@@ -65,10 +73,10 @@ const cardHeight = computed(() => 120 + handles.value.length * 20);
 
 // Function to add a new handle
 const addHandle = () => {
-  const newHandle = {
+  const newHandle: HandleConfig = {
     id: `right-handle-${handles.value.length + 1}`,
     type: "source",
-    position: "right",
+    position: Position.Right, // Use the Position enum
     offset: 120 + handles.value.length * 20, // Adjust offset dynamically
   };
   handles.value.push(newHandle);

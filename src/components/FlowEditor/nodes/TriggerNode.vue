@@ -1,5 +1,5 @@
 <template>
-  <div class="trigger-node node-wrapper" @click="openDrawer">
+  <div class="trigger-node node-wrapper">
     <!-- Header -->
     <div class="header flex items-start justify-between">
       <div class="flex items-center space-x-2">
@@ -32,40 +32,19 @@
       >
         Next
       </button>
-      <Handle type="source" position="right" class="handle-dot bg-blue-500" />
+      <Handle
+        type="source"
+        :position="Position.Right"
+        class="handle-dot bg-blue-500"
+      />
     </div>
-    <!-- Drawer -->
-    <TriggerDrawer
-      :visible="drawerVisible"
-      :initialData="data"
-      @close="closeDrawer"
-      @save="updateData"
-    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { Handle } from "@vue-flow/core";
-import { ref } from "vue";
-import TriggerDrawer from "../TriggerDrawer.vue";
-
+import { Handle, Position } from "@vue-flow/core";
 // Props
 defineProps(["data"]);
-// console.log(data, "data");
-// State for Drawer
-const drawerVisible = ref(false);
-
-// Methods
-const openDrawer = () => {
-  drawerVisible.value = true;
-};
-const closeDrawer = () => {
-  drawerVisible.value = false;
-};
-const updateData = (updatedData) => {
-  Object.assign(data, updatedData);
-  closeDrawer();
-};
 </script>
 
 <style scoped>
