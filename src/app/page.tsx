@@ -1,10 +1,14 @@
-'use client';
-import FlowEditor from '@/components/FlowEditor';
+'use client'
+
+import { useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
-  return (
-    <main>
-      <FlowEditor />
-    </main>
-  );
+  const router = useRouter()
+
+  useEffect(() => {
+    router.push('/editor')
+  }, [router])
+
+  return null
 }
