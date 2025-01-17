@@ -102,3 +102,7 @@ body {
     ),
     linear-gradient(90deg, #74f0d1 0%, #61eb4f 100%);
 }
+
+.secondary_color {
+  color: var(--secondary-color);
+}
