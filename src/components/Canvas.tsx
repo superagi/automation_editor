@@ -10,15 +10,11 @@ import ReactFlow, {
   Background,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
-import InputNode from './nodes/InputNode';
-import OutputNode from './nodes/OutputNode';
-import ProcessNode from './nodes/ProcessNode';
 import { NodeData } from '@/types';
+import CustomNode from './nodes/CustomNode';
 
 const nodeTypes = {
-  input: InputNode,
-  process: ProcessNode,
-  output: OutputNode,
+  custom: CustomNode,
 };
 
 export default function Canvas() {
@@ -39,10 +35,10 @@ export default function Canvas() {
     (event: React.DragEvent) => {
       event.preventDefault();
 
-      const type = event.dataTransfer.getData('application/reactflow');
-      if (!type) return;
+      const data = event.dataTransfer.getData('application/reactflow');
+      if (!data) return;
 
-      const nodeData: NodeData = JSON.parse(type);
+      const nodeData: NodeData = JSON.parse(data);
       const position = {
         x: event.clientX - 200,
         y: event.clientY - 40,
@@ -50,9 +46,9 @@ export default function Canvas() {
 
       const newNode: Node = {
         id: String(Date.now()),
-        type: nodeData.type,
+        type: "custom", //By default keeping it as custom 
         position,
-        data: { label: nodeData.label },
+        data: nodeData,
       };
 
       setNodes((nds) => nds.concat(newNode));
