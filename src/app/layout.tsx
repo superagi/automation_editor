@@ -8,9 +8,7 @@ export const metadata = {
   description: 'React Flow Editor',
 };
 
-export default function RootLayout({
-                                     children,
-                                   }: {
+export default function RootLayout({children}: {
   children: React.ReactNode;
 }) {
   return (

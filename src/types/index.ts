@@ -1,4 +1,10 @@
-export interface NodeData {
+export interface OutputItem {
   label: string;
-  type: string;
+}
+
+export interface NodeData {
+  type: 'trigger' | 'action' | "end"; // Limit to valid node types
+  label: string;
+  description: string;
+  outputArray: OutputItem[]; // Array of output items
 }
