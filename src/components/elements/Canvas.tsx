@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useRef } from 'react'
 import ReactFlow, {
   Node,
   Edge,
@@ -8,6 +8,7 @@ import ReactFlow, {
   useEdgesState,
   Controls,
   Background,
+  ReactFlowInstance,
 } from 'reactflow'
 import 'reactflow/dist/style.css'
 import { NodeData } from '@/types'
@@ -18,8 +19,13 @@ const nodeTypes = {
 }
 
 export default function Canvas() {
+  const reactFlowInstance = useRef<ReactFlowInstance | null>(null)
   const [nodes, setNodes, onNodesChange] = useNodesState([])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
+
+  const onInit = useCallback((instance: ReactFlowInstance) => {
+    reactFlowInstance.current = instance
+  }, [])
 
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),
@@ -36,14 +42,15 @@ export default function Canvas() {
       event.preventDefault()
 
       const data = event.dataTransfer.getData('application/reactflow')
-      if (!data) return
+      if (!data || !reactFlowInstance.current) return
+
+      const reactflowBounds = event.currentTarget.getBoundingClientRect()
+      const position = reactFlowInstance.current.project({
+        x: event.clientX - reactflowBounds.left,
+        y: event.clientY - reactflowBounds.top,
+      })
 
       const nodeData: NodeData = JSON.parse(data)
-      const position = {
-        x: event.clientX - 200,
-        y: event.clientY - 40,
-      }
-
       const newNode: Node = {
         id: String(Date.now()),
         type: 'custom', //By default keeping it as custom
@@ -61,13 +68,13 @@ export default function Canvas() {
       <ReactFlow
         nodes={nodes}
         edges={edges}
+        onInit={onInit}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
         onDragOver={onDragOver}
         onDrop={onDrop}
         nodeTypes={nodeTypes}
-        fitView
       >
         <Background />
         <Controls />

@@ -8,3 +8,97 @@ body {
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --banner-height: 0px;
+  --foreground-rgb: #fff;
+  --background-color: #0e0e10;
+  --secondary-color: #888;
+  --text-color: #fff;
+  --error-color: #ff3e2d;
+  --layout-bg-color: #131315;
+  --landing-page-gradient-color: linear-gradient(
+    180deg,
+    rgb(123 61 235 / 40%) 16.5%,
+    rgb(255 255 255 / 40%) 100%
+  );
+  --sidebar-item-selected: rgb(255 255 255 / 12%);
+  --primary-button-bg-color: #fff;
+  --primary-button-fg-color: #000;
+  --primary-button-hover-color: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 20%) 0%,
+      rgb(0 0 0 / 20%) 100%
+    ),
+    #fff;
+  --primary-button-active-color: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 40%) 0%,
+      rgb(0 0 0 / 40%) 100%
+    ),
+    #fff;
+  --secondary-button-bg-color: rgb(255 255 255 / 8%);
+  --secondary-button-fg-color: #fff;
+  --white-opacity-2: rgb(255 255 255 / 2%);
+  --white-opacity-3: rgb(255 255 255 / 3%);
+  --white-opacity-4: rgb(255 255 255 / 4%);
+  --white-opacity-5: rgb(255 255 255 / 5%);
+  --white-opacity-6: rgb(255 255 255 / 6%);
+  --white-opacity-8: rgb(255 255 255 / 8%);
+  --white-opacity-10: rgb(255 255 255 / 10%);
+  --white-opacity-12: rgb(255 255 255 / 12%);
+  --white-opacity-14: rgb(255 255 255 / 14%);
+  --white-opacity-16: rgb(255 255 255 / 16%);
+  --white-opacity-20: rgb(255 255 255 / 20%);
+  --white-opacity-24: rgb(255 255 255 / 24%);
+  --white-opacity-25: rgb(255 255 255 / 25%);
+  --white-opacity-60: rgb(255 255 255 / 60%);
+  --color-666: #666;
+  --project-bg-color: rgb(0 0 0 / 24%);
+  --selected-image-border-color: rgb(255 255 255 / 80%);
+  --github-button-border-color: #d1d5da;
+  --received-conversation-bg-color: #1e1921;
+  --profile-circle-bg-color: #323233;
+  --link-color: #1890ff;
+  --onboarding-image-border-color: #262626;
+  --beamer-gradient: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 30%) 0%,
+      rgb(0 0 0 / 30%) 100%
+    ),
+    linear-gradient(342deg, #b343cb -4.79%, #7095eb 78.39%);
+  --default-profile-color: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 20%) 0%,
+      rgb(0 0 0 / 20%) 100%
+    ),
+    rgb(255 255 255 / 20%);
+  --disconnect-color: #ff7262;
+  --call-container-bg: #1d1d20;
+  --call-container-boxshadow: rgb(0 0 0 / 40%);
+  --receive-call-bg: rgb(79 173 32 / 100%);
+  --end-call-bg: rgb(255 63 63 / 100%);
+  --dropdown-bg: #1d1d20;
+  --dropdown-boxshadow: -2px 2px 24px 0 rgb(0 0 0 / 40%);
+  --ended-icon: #c89826;
+  --researching-icon: #877ae1;
+  --complete-icon: #2d6711;
+  --paused-icon: #aa7c23;
+  --bounced-icon: #ac1c1e;
+  --default-icon: #474747;
+  --audio-player-default-color: #2e2e2e;
+  --tooltip-bg: #2a2a2a;
+  --small-action-bg: #303030;
+  --action-banner-progress: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 60%) 0%,
+      rgb(0 0 0 / 60%) 100%
+    ),
+    linear-gradient(90deg, #b343cb 0%, #7095eb 100%);
+  --action-banner-complete: linear-gradient(
+      0deg,
+      rgb(0 0 0 / 60%) 0%,
+      rgb(0 0 0 / 60%) 100%
+    ),
+    linear-gradient(90deg, #74f0d1 0%, #61eb4f 100%);
+}
