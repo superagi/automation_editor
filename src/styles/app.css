@@ -36,6 +36,25 @@ body {
   background-color: var(--background-color);
 }
 
+.border_8 {
+  border: 1px solid var(--white-opacity-8);
+}
+
+.border_bottom {
+  border-bottom: 1px solid var(--white-opacity-8);
+}
+
+.border_right {
+  border-right: 1px solid var(--white-opacity-8);
+}
+
+.border_top {
+  border-top: 1px solid var(--white-opacity-8);
+}
+
+.border_left {
+  border-left: 1px solid var(--white-opacity-8);
+}
 
 .primary_large, .primary_medium, .primary_small {
   display: flex;

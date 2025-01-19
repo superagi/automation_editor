@@ -1,0 +1,17 @@
+.steps_container {
+    border: 1px solid var(--white-opacity-8);
+    background: var(--white-opacity-4);
+    backdrop-filter: blur(10px);
+}
+
+.step_option {
+    display: flex;
+    height: 40px;
+    padding: 0 4px 0 12px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    border-radius: 8px;
+    border: 1px solid var(--white-opacity-8);
+    background: var(--white-opacity-4);
+}

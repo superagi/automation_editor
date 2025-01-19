@@ -1,11 +1,11 @@
 'use client'
 import Canvas from '@/components/elements/Canvas'
-import Sidebar from '@/components/elements/Sidebar'
+import Steps from '@/components/elements/steps/Steps'
 
 export default function FlowEditor() {
   return (
     <div className="flex h-screen">
-      <Sidebar />
+      <Steps />
       <Canvas />
     </div>
   )

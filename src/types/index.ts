@@ -1,10 +1,17 @@
+import { StaticImageData } from 'next/image'
+
 export interface OutputItem {
-  label: string;
+  label: string
 }
 
 export interface NodeData {
-  type: 'trigger' | 'action' | "end"; // Limit to valid node types
-  label: string;
-  description: string;
-  outputArray: OutputItem[]; // Array of output items
+  id:
+    | 'email'
+    | 'linkedin_message'
+    | 'linkedin_in_mail'
+    | 'linkedin_connections'
+    | 'update_entity'
+  label: string
+  icon: StaticImageData
+  outputArray: OutputItem[]
 }

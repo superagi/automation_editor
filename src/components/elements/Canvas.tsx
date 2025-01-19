@@ -53,7 +53,7 @@ export default function Canvas() {
       const nodeData: NodeData = JSON.parse(data)
       const newNode: Node = {
         id: String(Date.now()),
-        type: 'custom', //By default keeping it as custom
+        type: 'custom',
         position,
         data: nodeData,
       }
@@ -64,7 +64,7 @@ export default function Canvas() {
   )
 
   return (
-    <div className="flex-1 h-full">
+    <div className="flex-1" style={{ height: 'calc(100vh - 60px)' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}

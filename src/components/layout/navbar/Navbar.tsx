@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <div
       id={'navbar'}
-      className={`${navbar.navbar} flex flex-row items-center justify-between text-white p-4`}
+      className={`${navbar.navbar} flex flex-row items-center justify-between text-white px-4`}
     >
       <div
         id={'navbar_left_section'}
