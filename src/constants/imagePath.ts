@@ -1,11 +1,11 @@
 import { AppIcons } from '@/types/imagePath'
 
-import emailSelected from '../../public/images/selected/email.svg'
-import emailUnselected from '../../public/images/unselected/email.svg'
-import updateEntitySelected from '../../public/images/selected/update_entity.svg'
-import updateEntityUnselected from '../../public/images/unselected/update_entity.svg'
-import backArrow from '../../public/images/common/back_arrow.svg'
-import linkedin from '../../public/images/common/linkedin.svg'
+import emailSelected from '@/assets/images/selected/email.svg'
+import emailUnselected from '@/assets/images/unselected/email.svg'
+import updateEntitySelected from '@/assets/images/selected/update_entity.svg'
+import updateEntityUnselected from '@/assets/images/unselected/update_entity.svg'
+import backArrow from '@/assets/images/common/back_arrow.svg'
+import linkedin from '@/assets/images/common/linkedin.svg'
 
 export const imagePath: AppIcons = {
   selected: {

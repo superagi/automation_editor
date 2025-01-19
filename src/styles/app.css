@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proxima-nova-2/Mark-Simonson-Proxima-Nova-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proxima-nova-2/Mark-Simonson-Proxima-Nova-Regular.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proxima-nova-2/Mark-Simonson-Proxima-Nova-Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../assets/fonts/proxima-nova-2/Mark-Simonson-Proxima-Nova-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   --foreground-rgb: #fff;
   --background-color: #0e0e10;
@@ -34,6 +62,18 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
+}
+
+.proxima_nova {
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.space_mono {
+  font-family: 'Space Mono', sans-serif;
+}
+
+.public_sans {
+  font-family: 'Public Sans', sans-serif;
 }
 
 .border_8 {

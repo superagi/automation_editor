@@ -46,7 +46,9 @@ export default function Steps() {
   }
 
   return (
-    <aside className={`${styles.steps_container} w-64 h-full text-white`}>
+    <aside
+      className={`${styles.steps_container} w-64 h-full text-white proxima_nova`}
+    >
       <div
         className={'flex flex-row items-center gap-3 py-3 px-4 border_bottom'}
       >
