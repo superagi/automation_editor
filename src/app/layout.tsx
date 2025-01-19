@@ -1,9 +1,9 @@
 import '@/styles/app.css'
-import Navbar from '@/components/layout/Navbar'
+import Navbar from '@/components/layout/navbar/Navbar'
 
 export const metadata = {
-  title: 'Supersales',
-  description: 'Supersales Automation Editor',
+  title: 'SuperSales',
+  description: 'SuperSales Automation Editor',
 }
 
 export default function RootLayout({
