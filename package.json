@@ -11,6 +11,7 @@
     "lint:css:fix": "stylelint '**/*.{css,scss,sass,vue,html,jsx,tsx}' --fix"
   },
   "dependencies": {
+    "antd": "^5.23.1",
     "next": "15.1.4",
     "postcss-styled-syntax": "^0.7.0",
     "react": "^19.0.0",
