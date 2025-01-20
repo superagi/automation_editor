@@ -1,4 +1,5 @@
 .steps_container {
+    height: calc(100vh - 84px);
     border: 1px solid var(--white-opacity-8);
     background: var(--white-opacity-4);
     backdrop-filter: blur(10px);

@@ -41,7 +41,7 @@ export default function CustomNode({
           type={'target'}
           position={Position.Left}
           style={{
-            left: -5,
+            left: -6,
             width: '8px',
             height: '8px',
           }}
@@ -77,6 +77,7 @@ export default function CustomNode({
               position={Position.Right}
               id={output}
               style={{
+                right: -6,
                 background: 'var(--foreground-rgb)',
                 width: '8px',
                 height: '8px',

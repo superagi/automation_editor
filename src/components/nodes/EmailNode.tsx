@@ -1,13 +1,12 @@
 import imagePath from '@/constants/imagePath'
 import CustomNode from '@/components/common/CustomNode/CustomNode'
 import { NodeOption } from '@/types'
+import { emailNodeOutputs } from '@/constants/emailConstants'
 
 interface EmailNodeProps {
   id: string
   data: NodeOption
 }
-
-const outputs = ['Delivered', 'Not delivered', 'Replied', 'Not replied']
 
 export function EmailNode({ data, id }: EmailNodeProps) {
   return (
@@ -15,19 +14,14 @@ export function EmailNode({ data, id }: EmailNodeProps) {
       id={id}
       data={data}
       title="Email"
-      icon={imagePath.unselected.email}
-      outputs={outputs}
+      icon={imagePath.selected.email}
+      outputs={emailNodeOutputs}
     >
-      <div className="flex flex-col gap-2">
-        <input
-          type="text"
-          placeholder="Subject"
-          className="w-full bg-gray-700 p-2 rounded"
-        />
-        <textarea
-          placeholder="Message"
-          className="w-full bg-gray-700 p-2 rounded"
-        />
+      <div id={'email_node_content'} className="flex flex-col">
+        <div id={'from'} className={'flex flex-col'}>
+          <span className={'text-xs secondary_color'}>From</span>
+          <span className={'text-sm'}>sjhdf@jhfd.com</span>
+        </div>
       </div>
     </CustomNode>
   )

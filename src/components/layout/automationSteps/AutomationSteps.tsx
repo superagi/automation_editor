@@ -48,7 +48,7 @@ const nodes: NodeCategory[] = [
   },
 ]
 
-export default function Steps() {
+export default function AutomationSteps() {
   const onDragStart = (event: React.DragEvent, option: any) => {
     event.dataTransfer.setData(
       'application/reactflow',
@@ -59,7 +59,7 @@ export default function Steps() {
 
   return (
     <aside
-      className={`${styles.steps_container} w-56 h-full text-white proxima_nova rounded-lg`}
+      className={`${styles.steps_container} w-56 h-full text-white proxima_nova rounded-lg overflow-y-scroll`}
     >
       <div
         className={'flex flex-row items-center gap-3 py-3 px-4 border_bottom'}
