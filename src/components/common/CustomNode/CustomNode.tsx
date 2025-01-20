@@ -1,7 +1,8 @@
-import { Handle, Position } from 'reactflow'
+import { Handle, Position, useStore } from 'reactflow'
 import { NodeOption } from '@/types'
 import Image from 'next/image'
 import styles from './node.module.css'
+import { Node } from 'reactflow'
 
 interface CustomNodeProps {
   data: NodeOption
@@ -9,6 +10,7 @@ interface CustomNodeProps {
   title: string
   icon: any
   outputs: string[]
+  id: string
 }
 
 export default function CustomNode({
@@ -17,11 +19,19 @@ export default function CustomNode({
   title,
   icon,
   outputs,
+  id,
 }: CustomNodeProps) {
+  const selectedNodes = useStore((state) =>
+    Array.from(state.nodeInternals.values()).filter((node) => node.selected)
+  )
+  const isSelected = selectedNodes.some((node: Node) => node.id === id)
+
   return (
     <div
       id={`${data.id}_custom_node`}
-      className={`${styles.node_container} flex flex-col rounded-lg w-60 text-white`}
+      className={`${styles.node_container} ${
+        isSelected ? styles.selected : ''
+      } flex flex-col rounded-lg w-60 text-white`}
     >
       <div
         id={`${data.id}_custom_node_header`}

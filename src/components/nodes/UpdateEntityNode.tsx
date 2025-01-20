@@ -1,17 +1,18 @@
-import Image from 'next/image'
 import imagePath from '@/constants/imagePath'
 import CustomNode from '@/components/common/CustomNode/CustomNode'
 import { NodeOption } from '@/types'
 
 interface UpdateEntityNodeProps {
+  id: string
   data: NodeOption
 }
 
 const outputs = ['Updated', 'Failed']
 
-export function UpdateEntityNode({ data }: UpdateEntityNodeProps) {
+export function UpdateEntityNode({ data, id }: UpdateEntityNodeProps) {
   return (
     <CustomNode
+      id={id}
       data={data}
       title="Update Entity"
       icon={imagePath.unselected.updateEntity}
