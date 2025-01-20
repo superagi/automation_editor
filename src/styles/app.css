@@ -76,6 +76,10 @@ body {
   font-family: 'Public Sans', sans-serif;
 }
 
+.secondary_color {
+  color: var(--secondary-color)
+}
+
 .border_8 {
   border: 1px solid var(--white-opacity-8);
 }

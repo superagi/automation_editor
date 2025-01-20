@@ -11,12 +11,7 @@ import ReactFlow, {
   ReactFlowInstance,
 } from 'reactflow'
 import 'reactflow/dist/style.css'
-import { NodeData } from '@/types'
-import CustomNode from '../nodes/CustomNode'
-
-const nodeTypes = {
-  custom: CustomNode,
-}
+import { nodeTypes } from '@/types/nodeTypes'
 
 export default function Canvas() {
   const reactFlowInstance = useRef<ReactFlowInstance | null>(null)
@@ -45,15 +40,15 @@ export default function Canvas() {
       if (!data || !reactFlowInstance.current) return
 
       const reactflowBounds = event.currentTarget.getBoundingClientRect()
-      const position = reactFlowInstance.current.project({
-        x: event.clientX - reactflowBounds.left,
-        y: event.clientY - reactflowBounds.top,
+      const position = reactFlowInstance.current.screenToFlowPosition({
+        x: event.clientX,
+        y: event.clientY,
       })
 
-      const nodeData: NodeData = JSON.parse(data)
+      const { type, data: nodeData } = JSON.parse(data)
       const newNode: Node = {
         id: String(Date.now()),
-        type: 'custom',
+        type,
         position,
         data: nodeData,
       }

@@ -13,6 +13,7 @@ interface UnselectedIcons {
 interface CommonIcons {
   backArrow: StaticImageData
   linkedin: StaticImageData
+  dragIcon: StaticImageData
 }
 
 export interface AppIcons {
