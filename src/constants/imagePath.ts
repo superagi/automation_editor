@@ -6,6 +6,7 @@ import updateEntitySelected from '@/assets/images/selected/update_entity.svg'
 import updateEntityUnselected from '@/assets/images/unselected/update_entity.svg'
 import backArrow from '@/assets/images/common/back_arrow.svg'
 import linkedin from '@/assets/images/common/linkedin.svg'
+import dragIcon from '@/assets/images/common/drag_icon.svg'
 
 export const imagePath: AppIcons = {
   selected: {
@@ -19,6 +20,7 @@ export const imagePath: AppIcons = {
   common: {
     backArrow: backArrow,
     linkedin: linkedin,
+    dragIcon: dragIcon,
   },
 }
 
