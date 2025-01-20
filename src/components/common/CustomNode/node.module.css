@@ -1,0 +1,6 @@
+.node_container {
+    border-radius: 8px;
+    background: var(--node-container-bg);
+    box-shadow: var(--node-container-boxshadow);
+    font-family: "Proxima Nova", sans-serif;
+}
