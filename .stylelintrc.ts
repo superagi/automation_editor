@@ -4,6 +4,13 @@ import type { Config } from 'stylelint'
 const config: Config = {
   extends: ['stylelint-config-standard'],
   rules: {
+    'keyframes-name-pattern': [
+      '^[a-z0-9_-]+$',
+      {
+        message:
+          "Expected keyframe name to be kebab-case (e.g., 'fade-in') or with underscores",
+      },
+    ],
     'block-no-empty': true,
     'no-empty-source': true,
     'declaration-block-no-duplicate-properties': true,
@@ -15,29 +22,29 @@ const config: Config = {
     'property-no-unknown': [
       true,
       {
-        ignoreProperties: ['background-color']
-      }
+        ignoreProperties: ['background-color'],
+      },
     ],
     'function-no-unknown': [
       true,
       {
-        ignoreFunctions: ['var']
-      }
+        ignoreFunctions: ['var'],
+      },
     ],
     // Add support for CSS Modules
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global', 'export', 'import', 'local']
-      }
-    ]
+        ignorePseudoClasses: ['global', 'export', 'import', 'local'],
+      },
+    ],
   },
   overrides: [
     {
       files: ['**/*.{ts,tsx}'],
-      customSyntax: 'postcss-styled-syntax'
-    }
-  ]
+      customSyntax: 'postcss-styled-syntax',
+    },
+  ],
 }
 
-export default config;
+export default config

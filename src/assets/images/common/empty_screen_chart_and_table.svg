@@ -1,0 +1,10 @@
+<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="legend_toggle">
+<mask id="mask0_24921_20600" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="72" height="72">
+<rect id="Bounding box" width="72" height="72" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_24921_20600)">
+<path id="legend_toggle_2" d="M13.5 54.8082V51.8082H58.5V54.8082H13.5ZM13.5 43.5004V40.5004H58.5V43.5004H13.5ZM13.5 31.0392V27.5082L29.9423 17.4814L45 28.1892L58.5 18.5772V22.2927L45 31.8469L29.8327 21.1039L13.5 31.0392Z" fill="#888888"/>
+</g>
+</g>
+</svg>

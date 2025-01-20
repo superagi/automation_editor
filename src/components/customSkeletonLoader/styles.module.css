@@ -1,0 +1,37 @@
+.container_bg_color {
+  background: rgb(255 255 255 / 4%);
+}
+
+.bg_dark_6 {
+  background-color: var(--white-opacity-6);
+}
+
+.hsk {
+  border-radius: 4px;
+}
+
+.rsk {
+  border-radius: 9999px;
+}
+
+.bg_dark_4 {
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid var(--white-opacity-8);
+  background: var(--white-opacity-4);
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
