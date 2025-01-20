@@ -1,6 +1,12 @@
 .node_container {
     border-radius: 8px;
+    border: 2px solid transparent;
     background: var(--node-container-bg);
     box-shadow: var(--node-container-boxshadow);
     font-family: "Proxima Nova", sans-serif;
+    transition: border 0.4s ease-in-out;
+}
+
+.selected {
+    border: 2px solid var(--white-opacity-60);
 }

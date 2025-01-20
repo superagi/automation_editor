@@ -1,17 +1,18 @@
-import Image from 'next/image'
 import imagePath from '@/constants/imagePath'
 import CustomNode from '@/components/common/CustomNode/CustomNode'
 import { NodeOption } from '@/types'
 
 interface LinkedinInMailNodeProps {
+  id: string
   data: NodeOption
 }
 
 const outputs = ['Sent', 'Failed']
 
-export function LinkedinInMailNode({ data }: LinkedinInMailNodeProps) {
+export function LinkedinInMailNode({ data, id }: LinkedinInMailNodeProps) {
   return (
     <CustomNode
+      id={id}
       data={data}
       title="LinkedIn InMail"
       icon={imagePath.common.linkedin}
