@@ -4,12 +4,12 @@ export interface DropdownProps {
   maxHeight?: string // Changed from string | null to optional string
   gap?: string
   position?:
-    | 'start'
-    | 'end'
-    | 'center'
-    | 'top'
-    | 'topstart'
-    | 'topend'
+    | 'bottom_start'
+    | 'bottom_end'
+    | 'bottom_center'
+    | 'top_start'
+    | 'top_center'
+    | 'top_end'
     | 'left'
     | 'right'
   show?: boolean

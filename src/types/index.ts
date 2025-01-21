@@ -17,6 +17,7 @@ export interface NodeOption {
     | 'linkedin_in_mail'
     | 'linkedin_connections'
     | 'update_entity'
+    | 'trigger'
   label: string
   icon: StaticImageData
   outputArray: OutputItem[]

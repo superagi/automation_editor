@@ -15,7 +15,7 @@ import closeIcon from '@/assets/images/common/close_icon.svg'
 import chartLoader from '@/assets/images/common/chart_loader.svg'
 import tableLoader from '@/assets/images/common/table_loader.svg'
 import dragIcon from '@/assets/images/common/drag_icon.svg'
-
+import flagIcon from '@/assets/images/common/flag_icon.svg'
 export const imagePath: AppIcons = {
   selected: {
     email: emailSelected,
@@ -37,6 +37,7 @@ export const imagePath: AppIcons = {
     tableLoader: tableLoader,
     chartLoader: chartLoader,
     dragIcon: dragIcon,
+    flagIcon: flagIcon,
   },
 }
 

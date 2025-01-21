@@ -3,6 +3,7 @@ import { LinkedinMessageNode } from '@/components/nodes/LinkedinMessageNode'
 import { LinkedinInMailNode } from '@/components/nodes/LinkedinInMailNode'
 import { LinkedinConnectionsNode } from '@/components/nodes/LinkedinConnectionsNode'
 import { UpdateEntityNode } from '@/components/nodes/UpdateEntityNode'
+import { TriggerNode } from '@/components/nodes/TriggerNode'
 
 export const nodeTypes = {
   email: EmailNode,
@@ -10,4 +11,5 @@ export const nodeTypes = {
   linkedin_in_mail: LinkedinInMailNode,
   linkedin_connections: LinkedinConnectionsNode,
   update_entity: UpdateEntityNode,
+  trigger: TriggerNode,
 }

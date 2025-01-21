@@ -1,4 +1,4 @@
-// CustomDropdown.tsx
+'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './styles.module.css'
 import { DropdownProps, CustomCSSProperties } from './type'
@@ -68,28 +68,28 @@ const CustomDropdown: React.FC<DropdownProps> = ({
 
     if (relativeToViewport && rect && triggerRect) {
       const intendedPosition: { [key: string]: CustomCSSProperties } = {
-        start: {
+        bottom_start: {
           top: `${triggerRect.bottom}px`,
           left: `${triggerRect.left}px`,
         },
-        end: {
+        bottom_end: {
           top: `${triggerRect.bottom}px`,
           right: `${viewportWidth - triggerRect.right}px`,
           left: 'auto',
         },
-        center: {
+        bottom_center: {
           top: `${triggerRect.bottom}px`,
           left: `${triggerRect.left + triggerRect.width / 2 - rect.width / 2}px`,
         },
-        top: {
+        top_start: {
           top: `${triggerRect.top - rect.height}px`,
           left: `${triggerRect.left}px`,
         },
-        topstart: {
+        top_center: {
           top: `${triggerRect.top - rect.height}px`,
-          left: `${triggerRect.left}px`,
+          left: `${triggerRect.left + triggerRect.width / 2 - rect.width / 2}px`,
         },
-        topend: {
+        top_end: {
           top: `${triggerRect.top - rect.height}px`,
           left: `${triggerRect.right - rect.width}px`,
         },
@@ -126,15 +126,20 @@ const CustomDropdown: React.FC<DropdownProps> = ({
       setDropdownPosition(newPosition)
     } else {
       const positions: { [key: string]: CustomCSSProperties } = {
-        start: { left: '0' },
-        end: { right: '0', left: 'auto' },
-        center: { left: '50%', transform: 'translateX(-50%)' },
-        top: { bottom: '100%', left: '0' },
-        topstart: { bottom: '100%', left: '0' },
-        topend: { bottom: '100%', right: '0' },
+        bottom_start: { left: '0' },
+        bottom_end: { right: '0', left: 'auto' },
+        bottom_center: { left: '50%', transform: 'translateX(-50%)' },
+        top_start: { bottom: '100%', left: '0' },
+        top_center: {
+          bottom: '100%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+        },
+        top_end: { bottom: '100%', right: '0' },
         left: { right: '100%', top: '0' },
         right: { left: '100%', top: '0' },
       }
+
       setDropdownPosition(positions[position])
     }
   }
@@ -182,10 +187,12 @@ const CustomDropdown: React.FC<DropdownProps> = ({
         <div
           ref={dropdownRef}
           className={`${styles.dropdown} ${isClosing ? styles.fade_out : ''} ${
-            position === 'center' ? styles.center : ''
-          } ${position === 'top' ? styles.top : ''} ${
-            position === 'topstart' ? styles.topstart : ''
-          } ${position === 'topend' ? styles.topend : ''} ${
+            position.includes('center') && 'bottom_center'
+              ? styles.bottom_center
+              : ''
+          } ${position === 'top_start' ? styles.top_start : ''} ${
+            position === 'top_start' ? styles.top_start : ''
+          } ${position === 'top_end' ? styles.top_end : ''} ${
             position === 'left' ? styles.left : ''
           } ${position === 'right' ? styles.right : ''} ${dropdownCSS}`}
           style={dropdownStyle}
