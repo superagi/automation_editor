@@ -17,8 +17,7 @@ export default function Navbar() {
           src={imagePath.common.backArrow}
           alt={'back_arrow'}
         />
-
-        <span className={'text-base font-semibold'}>automation name here</span>
+        <span className={'text-base font-semibold '}>automation name here</span>
       </div>
 
       <div id={'navbar_center_section'}></div>
