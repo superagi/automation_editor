@@ -20,11 +20,11 @@ export default function Canvas() {
   const reactFlowInstance = useRef<ReactFlowInstance | null>(null)
   const [nodes, setNodes, onNodesChange] = useNodesState([
     {
-      id: 'trigger',
+      id: 'trigger_node_1',
       type: 'trigger',
       position: { x: 100, y: 100 },
       data: {
-        id: 'trigger_node_1',
+        id: 'trigger',
         title: 'Start Here',
       },
     },
