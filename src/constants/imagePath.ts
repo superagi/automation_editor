@@ -14,6 +14,7 @@ import emptyScreen from '@/assets/images/common/empty_screen.svg'
 import closeIcon from '@/assets/images/common/close_icon.svg'
 import chartLoader from '@/assets/images/common/chart_loader.svg'
 import tableLoader from '@/assets/images/common/table_loader.svg'
+import dragIcon from '@/assets/images/common/drag_icon.svg'
 
 export const imagePath: AppIcons = {
   selected: {
@@ -35,6 +36,7 @@ export const imagePath: AppIcons = {
     closeIcon: closeIcon,
     tableLoader: tableLoader,
     chartLoader: chartLoader,
+    dragIcon: dragIcon,
   },
 }
 

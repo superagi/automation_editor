@@ -4,7 +4,13 @@ export interface OutputItem {
   label: string
 }
 
-export interface NodeData {
+export interface NodeCategory {
+  type: string
+  label: string
+  options: NodeOption[]
+}
+
+export interface NodeOption {
   id:
     | 'email'
     | 'linkedin_message'

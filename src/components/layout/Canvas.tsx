@@ -9,19 +9,18 @@ import ReactFlow, {
   Controls,
   Background,
   ReactFlowInstance,
+  NodeMouseHandler,
 } from 'reactflow'
 import 'reactflow/dist/style.css'
-import { NodeData } from '@/types'
-import CustomNode from '../nodes/CustomNode'
-
-const nodeTypes = {
-  custom: CustomNode,
-}
+import { nodeTypes } from '@/types/nodeTypes'
+import { useAutomation } from '@/context/AutomationContext'
+import { NodeOption } from '@/types'
 
 export default function Canvas() {
   const reactFlowInstance = useRef<ReactFlowInstance | null>(null)
   const [nodes, setNodes, onNodesChange] = useNodesState([])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
+  const { setSelectedNode } = useAutomation()
 
   const onInit = useCallback((instance: ReactFlowInstance) => {
     reactFlowInstance.current = instance
@@ -45,15 +44,15 @@ export default function Canvas() {
       if (!data || !reactFlowInstance.current) return
 
       const reactflowBounds = event.currentTarget.getBoundingClientRect()
-      const position = reactFlowInstance.current.project({
-        x: event.clientX - reactflowBounds.left,
-        y: event.clientY - reactflowBounds.top,
+      const position = reactFlowInstance.current.screenToFlowPosition({
+        x: event.clientX,
+        y: event.clientY,
       })
 
-      const nodeData: NodeData = JSON.parse(data)
+      const { type, data: nodeData } = JSON.parse(data)
       const newNode: Node = {
         id: String(Date.now()),
-        type: 'custom',
+        type,
         position,
         data: nodeData,
       }
@@ -62,6 +61,17 @@ export default function Canvas() {
     },
     [setNodes]
   )
+
+  const onNodeClick: NodeMouseHandler = useCallback(
+    (event: React.MouseEvent, node: Node) => {
+      setSelectedNode(node.data as NodeOption)
+    },
+    [setSelectedNode]
+  )
+
+  const onPaneClick = useCallback(() => {
+    setSelectedNode(null)
+  }, [setSelectedNode])
 
   return (
     <div className="flex-1" style={{ height: 'calc(100vh - 60px)' }}>
@@ -74,9 +84,19 @@ export default function Canvas() {
         onConnect={onConnect}
         onDragOver={onDragOver}
         onDrop={onDrop}
+        onNodeClick={onNodeClick}
+        onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
+        fitView
+        defaultEdgeOptions={{
+          type: 'smoothstep',
+          animated: true,
+        }}
+        deleteKeyCode={['Backspace', 'Delete']}
+        multiSelectionKeyCode={['Control', 'Meta']}
+        selectionKeyCode={['Shift']}
       >
-        <Background />
+        <Background color="#ccc" gap={16} size={1} />
         <Controls />
       </ReactFlow>
     </div>

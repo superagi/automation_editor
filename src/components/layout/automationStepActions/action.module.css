@@ -1,0 +1,9 @@
+.action_container {
+    height: calc(100vh - 84px);
+    width: 400px;
+    align-items: flex-start;
+    align-self: stretch;
+    border: 1px solid var(--white-opacity-8);
+    background: var(--white-opacity-4);
+    backdrop-filter: blur(10px);
+}
