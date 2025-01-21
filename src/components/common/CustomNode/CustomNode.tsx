@@ -37,15 +37,17 @@ export default function CustomNode({
         id={`${data.id}_custom_node_header`}
         className={'flex flex-row items-center p-2 relative'}
       >
-        <Handle
-          type={'target'}
-          position={Position.Left}
-          style={{
-            left: -6,
-            width: '8px',
-            height: '8px',
-          }}
-        />
+        {data?.id !== 'trigger' && (
+          <Handle
+            type={'target'}
+            position={Position.Left}
+            style={{
+              left: -6,
+              width: '8px',
+              height: '8px',
+            }}
+          />
+        )}
 
         <div className={'flex flex-row items-center gap-2 px-[2px]'}>
           <Image className={'size-4'} src={icon} alt={`${data.id}_icon`} />

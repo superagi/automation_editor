@@ -18,7 +18,17 @@ import { NodeOption } from '@/types'
 
 export default function Canvas() {
   const reactFlowInstance = useRef<ReactFlowInstance | null>(null)
-  const [nodes, setNodes, onNodesChange] = useNodesState([])
+  const [nodes, setNodes, onNodesChange] = useNodesState([
+    {
+      id: 'trigger',
+      type: 'trigger',
+      position: { x: 100, y: 100 },
+      data: {
+        id: 'trigger_node_1',
+        title: 'Start Here',
+      },
+    },
+  ])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
   const { setSelectedNode } = useAutomation()
 
@@ -42,8 +52,6 @@ export default function Canvas() {
 
       const data = event.dataTransfer.getData('application/reactflow')
       if (!data || !reactFlowInstance.current) return
-
-      const reactflowBounds = event.currentTarget.getBoundingClientRect()
       const position = reactFlowInstance.current.screenToFlowPosition({
         x: event.clientX,
         y: event.clientY,
@@ -87,7 +95,6 @@ export default function Canvas() {
         onNodeClick={onNodeClick}
         onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
-        fitView
         defaultEdgeOptions={{
           type: 'smoothstep',
           animated: true,

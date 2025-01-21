@@ -70,8 +70,13 @@
   --white-opacity-60: rgb(255 255 255 / 60%);
   --dropdown-bg: #1d1d20;
   --dropdown-boxshadow: -2px 2px 24px 0 rgb(0 0 0 / 40%);
-  --node-container-bg: linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%), #131315;
-  --node-container-boxshadow: -16px 16px 80px 0 rgba(0, 0, 0, 0.40);
+  --node-container-bg: linear-gradient(
+      0deg,
+      rgb(255 255 255 / 4%) 0%,
+      rgb(255 255 255 / 4%) 100%
+    ),
+    #131315;
+  --node-container-boxshadow: -16px 16px 80px 0 rgb(0 0 0 / 40%);
 }
 
 html,
@@ -95,7 +100,7 @@ body {
 }
 
 .secondary_color {
-  color: var(--secondary-color)
+  color: var(--secondary-color);
 }
 
 .border_8 {

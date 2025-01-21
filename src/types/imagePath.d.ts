@@ -22,6 +22,7 @@ interface CommonIcons {
   tableLoader: StaticImageData
   chartLoader: StaticImageData
   dragIcon: StaticImageData
+  flagIcon: StaticImageData
 }
 
 export interface AppIcons {

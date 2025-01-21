@@ -23,15 +23,15 @@
   z-index: 10;
 }
 
-.dropdown.center {
+.dropdown.bottom_center {
   left: 50%;
   transform: translateX(-50%);
   animation: fade_in_center 0.3s forwards;
 }
 
 .dropdown.top,
-.dropdown.topstart,
-.dropdown.topend {
+.dropdown.top_start,
+.dropdown.top_end {
   animation: fade_in_top 0.3s forwards;
 }
 
@@ -43,13 +43,13 @@
   animation: fade_in_right 0.3s forwards;
 }
 
-.dropdown.center.fade_out {
+.dropdown.bottom_center.fade_out {
   animation: fade_out_center 0.3s forwards;
 }
 
 .dropdown.top.fade_out,
-.dropdown.topstart.fade_out,
-.dropdown.topend.fade_out {
+.dropdown.top_start.fade_out,
+.dropdown.top_end.fade_out {
   animation: fade_out_top 0.3s forwards;
 }
 
