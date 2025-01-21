@@ -9,14 +9,18 @@ import ReactFlow, {
   Controls,
   Background,
   ReactFlowInstance,
+  NodeMouseHandler,
 } from 'reactflow'
 import 'reactflow/dist/style.css'
 import { nodeTypes } from '@/types/nodeTypes'
+import { useAutomation } from '@/context/AutomationContext'
+import { NodeOption } from '@/types'
 
 export default function Canvas() {
   const reactFlowInstance = useRef<ReactFlowInstance | null>(null)
   const [nodes, setNodes, onNodesChange] = useNodesState([])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
+  const { setSelectedNode } = useAutomation()
 
   const onInit = useCallback((instance: ReactFlowInstance) => {
     reactFlowInstance.current = instance
@@ -58,6 +62,17 @@ export default function Canvas() {
     [setNodes]
   )
 
+  const onNodeClick: NodeMouseHandler = useCallback(
+    (event: React.MouseEvent, node: Node) => {
+      setSelectedNode(node.data as NodeOption)
+    },
+    [setSelectedNode]
+  )
+
+  const onPaneClick = useCallback(() => {
+    setSelectedNode(null)
+  }, [setSelectedNode])
+
   return (
     <div className="flex-1" style={{ height: 'calc(100vh - 60px)' }}>
       <ReactFlow
@@ -69,9 +84,19 @@ export default function Canvas() {
         onConnect={onConnect}
         onDragOver={onDragOver}
         onDrop={onDrop}
+        onNodeClick={onNodeClick}
+        onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
+        fitView
+        defaultEdgeOptions={{
+          type: 'smoothstep',
+          animated: true,
+        }}
+        deleteKeyCode={['Backspace', 'Delete']}
+        multiSelectionKeyCode={['Control', 'Meta']}
+        selectionKeyCode={['Shift']}
       >
-        <Background />
+        <Background color="#ccc" gap={16} size={1} />
         <Controls />
       </ReactFlow>
     </div>
