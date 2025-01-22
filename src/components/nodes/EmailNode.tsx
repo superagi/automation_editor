@@ -1,7 +1,6 @@
 import imagePath from '@/constants/imagePath'
 import CustomNode from '@/components/common/CustomNode/CustomNode'
 import { NodeOption } from '@/types'
-import { emailNodeOutputs } from '@/constants/emailConstants'
 
 interface EmailNodeProps {
   id: string
@@ -15,7 +14,6 @@ export function EmailNode({ data, id }: EmailNodeProps) {
       data={data}
       title="Email"
       icon={imagePath.selected.email}
-      outputs={emailNodeOutputs}
     >
       <div id={'email_node_content'} className="flex flex-col">
         <div id={'from'} className={'flex flex-col'}>
