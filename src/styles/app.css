@@ -284,7 +284,7 @@ body {
   color: var(--foreground-rgb);
   border: 1px solid var(--white-opacity-8) !important;
   background: var(--white-opacity-4);
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .textarea_medium {

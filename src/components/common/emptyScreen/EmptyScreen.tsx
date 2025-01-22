@@ -1,6 +1,6 @@
 import React from 'react'
 import { EmptyScreenProps } from './type'
-import { emptyScreenTypes } from '@/constants/searchConstatnts'
+import { emptyScreenTypes } from '@/constants/searchConstants'
 import imagePath from '@/constants/imagePath'
 import Image from 'next/image'
 
@@ -14,16 +14,16 @@ const EmptyScreen: React.FC<EmptyScreenProps> = ({
   const getImagePath = () => {
     switch (type) {
       case emptyScreenTypes.SEARCH:
-        return imagePath.common.searchEmptyScreen
+        return imagePath.common.emptyScreenIcons.searchEmptyScreen
       case emptyScreenTypes.CHART_AND_TABLE:
-        return imagePath.common.chartAndTableEmptyScreen
+        return imagePath.common.emptyScreenIcons.chartAndTableEmptyScreen
       case emptyScreenTypes.CALL_LOGS:
-        return imagePath.common.callLogsEmptyScreen
+        return imagePath.common.emptyScreenIcons.callLogsEmptyScreen
       case emptyScreenTypes.CALL_QUALITY:
-        return imagePath.common.callQualityEmptyScreen
+        return imagePath.common.emptyScreenIcons.callQualityEmptyScreen
       case emptyScreenTypes.DEFAULT:
       default:
-        return imagePath.common.emptyScreen
+        return imagePath.common.emptyScreenIcons.emptyScreen
     }
   }
 

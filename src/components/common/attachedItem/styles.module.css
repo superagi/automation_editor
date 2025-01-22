@@ -1,0 +1,10 @@
+.attached_item {
+  border: 1px solid var(--white-opacity-14);
+  background-color: var(--white-opacity-6);
+  transition: all 0.2s ease;
+}
+
+.clicked {
+  transform: scale(0.95);
+  opacity: 0.8;
+}

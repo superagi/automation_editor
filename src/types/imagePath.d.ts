@@ -17,20 +17,28 @@ interface NeutralIcons {
   marketResearchIcon: StaticImageData
 }
 
-interface CommonIcons {
-  backArrow: StaticImageData
-  linkedin: StaticImageData
+interface EmptyScreenIcons {
+  emptyScreen: StaticImageData
   searchEmptyScreen: StaticImageData
   chartAndTableEmptyScreen: StaticImageData
   callLogsEmptyScreen: StaticImageData
   callQualityEmptyScreen: StaticImageData
-  emptyScreen: StaticImageData
+}
+
+interface CommonIcons {
+  emptyScreenIcons: EmptyScreenIcons
+  backArrow: StaticImageData
+  linkedin: StaticImageData
   closeIcon: StaticImageData
   tableLoader: StaticImageData
   chartLoader: StaticImageData
   dragIcon: StaticImageData
   crossIcon: StaticImageData
-  flagIcon: StaticImageData
+  triggerNodeTitleIcon: StaticImageData
+  downloadIcon: StaticImageData
+  attachFileIcon: StaticImageData
+  infoIcon: StaticImageData
+  warningIcon: StaticImageData
 }
 
 export interface AppIcons {

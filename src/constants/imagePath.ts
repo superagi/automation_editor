@@ -20,11 +20,11 @@ import emailNotificationSelected from '@/assets/images/selected/email_notificati
 import emailNotificationUnselected from '@/assets/images/unselected/email_notification.svg'
 import backArrow from '@/assets/images/common/back_arrow.svg'
 import linkedin from '@/assets/images/common/linkedin.svg'
-import searchEmptyScreen from '@/assets/images/common/search_empty_state.svg'
-import chartAndTableEmptyScreen from '@/assets/images/common/empty_screen_chart_and_table.svg'
-import callLogsEmptyScreen from '@/assets/images/common/empty_screen_call_logs.svg'
-import callQualityEmptyScreen from '@/assets/images/common/empty_screen_call_quality.svg'
-import emptyScreen from '@/assets/images/common/empty_screen.svg'
+import searchEmptyScreen from '@/assets/images/common/emptyScreenIcons/search_empty_state.svg'
+import chartAndTableEmptyScreen from '@/assets/images/common/emptyScreenIcons/empty_screen_chart_and_table.svg'
+import callLogsEmptyScreen from '@/assets/images/common/emptyScreenIcons/empty_screen_call_logs.svg'
+import callQualityEmptyScreen from '@/assets/images/common/emptyScreenIcons/empty_screen_call_quality.svg'
+import emptyScreen from '@/assets/images/common/emptyScreenIcons/empty_screen.svg'
 import closeIcon from '@/assets/images/common/close_icon.svg'
 import chartLoader from '@/assets/images/common/chart_loader.svg'
 import tableLoader from '@/assets/images/common/table_loader.svg'
@@ -32,8 +32,11 @@ import dragIcon from '@/assets/images/common/drag_icon.svg'
 import crossIcon from '@/assets/images/common/cross_icon.svg'
 import slackIcon from '@/assets/images/neutral/slack_icon.svg'
 import marketResearchIcon from '@/assets/images/neutral/market_research_icon.svg'
-import flagIcon from '@/assets/images/common/flag_icon.svg'
-
+import triggerNodeTitleIcon from '@/assets/images/common/trigger_node_title_icon.svg'
+import downloadIcon from '@/assets/images/common/download_icon.svg'
+import attachFileIcon from '@/assets/images/common/attach_file_icon.svg'
+import infoIcon from '@/assets/images/common/info_icon.svg'
+import warningIcon from '@/assets/images/common/warning_icon.svg'
 export const imagePath: AppIcons = {
   selected: {
     email: emailSelected,
@@ -62,19 +65,25 @@ export const imagePath: AppIcons = {
     marketResearchIcon: marketResearchIcon,
   },
   common: {
+    emptyScreenIcons: {
+      emptyScreen: emptyScreen,
+      searchEmptyScreen: searchEmptyScreen,
+      chartAndTableEmptyScreen: chartAndTableEmptyScreen,
+      callLogsEmptyScreen: callLogsEmptyScreen,
+      callQualityEmptyScreen: callQualityEmptyScreen,
+    },
     backArrow: backArrow,
     linkedin: linkedin,
-    searchEmptyScreen: searchEmptyScreen,
-    chartAndTableEmptyScreen: chartAndTableEmptyScreen,
-    callLogsEmptyScreen: callLogsEmptyScreen,
-    callQualityEmptyScreen: callQualityEmptyScreen,
-    emptyScreen: emptyScreen,
     closeIcon: closeIcon,
     tableLoader: tableLoader,
     chartLoader: chartLoader,
     dragIcon: dragIcon,
+    triggerNodeTitleIcon: triggerNodeTitleIcon,
+    downloadIcon: downloadIcon,
+    attachFileIcon: attachFileIcon,
     crossIcon: crossIcon,
-    flagIcon: flagIcon,
+    infoIcon: infoIcon,
+    warningIcon: warningIcon,
   },
 }
 

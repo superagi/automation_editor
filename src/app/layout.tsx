@@ -1,5 +1,6 @@
 import '@/styles/app.css'
 import Navbar from '@/components/layout/navbar/Navbar'
+import { AntdRegistry } from '@ant-design/nextjs-registry'
 
 export const metadata = {
   title: 'SuperSales',
@@ -14,8 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col h-screen overflow-hidden">
-        <Navbar />
-        <main className="flex-1 overflow-hidden">{children}</main>
+        <AntdRegistry>
+          <Navbar />
+          <main className="flex-1 overflow-hidden">{children}</main>
+        </AntdRegistry>
       </body>
     </html>
   )

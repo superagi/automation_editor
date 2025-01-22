@@ -15,7 +15,7 @@ export function TriggerNode({ data, id }: TriggerNodeProps) {
       id={id}
       data={data}
       title="Trigger"
-      icon={imagePath.common.flagIcon}
+      icon={imagePath.common.triggerNodeTitleIcon}
       outputs={outputs}
     >
       hello

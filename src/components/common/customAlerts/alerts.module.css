@@ -1,0 +1,20 @@
+.info_message,
+.warning_message {
+  display: flex;
+  flex-direction: row;
+  padding: 12px;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 8px;
+}
+
+.info_message {
+  border-left: 4px solid rgb(255 255 255 / 60%);
+  background: rgb(255 255 255 / 8%);
+}
+
+.warning_message {
+  border-left: 4px solid rgb(170 124 35 / 60%);
+  background: rgb(170 124 35 / 8%);
+}
