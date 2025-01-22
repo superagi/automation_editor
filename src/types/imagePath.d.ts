@@ -17,6 +17,10 @@ interface NeutralIcons {
   marketResearchIcon: StaticImageData
 }
 
+interface AlertIcons {
+  yellowAlert: StaticImageData
+}
+
 interface CommonIcons {
   backArrow: StaticImageData
   linkedin: StaticImageData
@@ -38,4 +42,5 @@ export interface AppIcons {
   unselected: IconSet
   neutral: NeutralIcons
   common: CommonIcons
+  alert: AlertIcons
 }

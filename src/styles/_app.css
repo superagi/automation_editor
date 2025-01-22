@@ -77,6 +77,7 @@
     ),
     #131315;
   --node-container-boxshadow: -16px 16px 80px 0 rgb(0 0 0 / 40%);
+  --yellow-alert: #FBBC04;
 }
 
 html,
@@ -101,6 +102,18 @@ body {
 
 .secondary_color {
   color: var(--secondary-color);
+}
+
+.form_col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form_row {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
 }
 
 .border_8 {

@@ -4,26 +4,26 @@ import { InfoItem } from '@/components/common/infoComponents/InfoItem'
 import imagePath from '@/constants/imagePath'
 import CustomNode from '@/components/common/CustomNode/CustomNode'
 
-interface TriggerNodeProps {
+interface AddToSequenceNodeProps {
   id: string
   data: NodeOption
 }
 
-export function TriggerNode({ data, id }: TriggerNodeProps) {
-  const [triggerEvent, setTriggerEvent] = useState('')
+export function AddToSequenceNode({ data, id }: AddToSequenceNodeProps) {
+  const [sequence, setSequence] = useState('')
 
   return (
     <CustomNode
       id={id}
       data={data}
-      title="Trigger"
-      icon={imagePath.common.flagIcon}
+      title="Add to Sequence"
+      icon={imagePath.selected.sequence}
     >
-      <div id={'trigger_node_content'} className={'flex flex-col'}>
+      <div id={'add_to_sequence_node_content'} className={'flex flex-col'}>
         <InfoItem
-          source={'trigger_node'}
-          title={'Trigger event'}
-          value={triggerEvent}
+          source={'add_to_sequence_node'}
+          title={'Sequence'}
+          value={sequence}
         />
       </div>
     </CustomNode>
