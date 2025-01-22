@@ -1,4 +1,4 @@
-import '@/styles/app.css'
+import '@/styles/_app.css'
 import Navbar from '@/components/layout/navbar/Navbar'
 
 export const metadata = {
