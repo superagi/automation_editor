@@ -1,4 +1,5 @@
-import { useCallback, useRef } from 'react'
+'use client'
+import { useCallback, useRef, useState } from 'react'
 import ReactFlow, {
   Node,
   Edge,
@@ -15,8 +16,10 @@ import 'reactflow/dist/style.css'
 import { nodeTypes } from '@/types/nodeTypes'
 import { useAutomation } from '@/context/AutomationContext'
 import { NodeOption } from '@/types'
+import styles from './Canvas.module.css'
 
 export default function Canvas() {
+  const [isAnimated, setIsAnimated] = useState<boolean>(false)
   const reactFlowInstance = useRef<ReactFlowInstance | null>(null)
   const [nodes, setNodes, onNodesChange] = useNodesState([
     {
@@ -81,8 +84,33 @@ export default function Canvas() {
     setSelectedNode(null)
   }, [setSelectedNode])
 
+  const toggleAnimation = () => {
+    setIsAnimated((prev) => {
+      const newAnimatedState = !prev
+
+      // Update the edges with the new animated state
+      setEdges((prevEdges) =>
+        prevEdges.map((edge) => ({
+          ...edge,
+          animated: newAnimatedState,
+        }))
+      )
+
+      return newAnimatedState
+    })
+  }
+
   return (
-    <div className="flex-1" style={{ height: 'calc(100vh - 60px)' }}>
+    <div
+      className="flex-1"
+      style={{ height: 'calc(100vh - 60px)', position: 'relative' }}
+    >
+      <button
+        onClick={toggleAnimation}
+        className={`primary_small ${styles.animation_toggle_button}`}
+      >
+        {isAnimated ? 'Disable Animation' : 'Enable Animation'}
+      </button>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -96,8 +124,8 @@ export default function Canvas() {
         onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
         defaultEdgeOptions={{
-          type: 'smoothstep',
-          animated: true,
+          type: 'bezier',
+          animated: isAnimated,
         }}
         deleteKeyCode={['Backspace', 'Delete']}
         multiSelectionKeyCode={['Control', 'Meta']}
