@@ -37,12 +37,6 @@ export const nodes: NodeCategory[] = [
         size: 16,
       },
       {
-        id: 'add_note',
-        label: 'Add Note',
-        icon: imagePath.unselected.notes,
-        size: 16,
-      },
-      {
         id: 'update_entity',
         label: 'Update Entity',
         icon: imagePath.unselected.updateEntity,
