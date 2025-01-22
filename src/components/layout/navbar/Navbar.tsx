@@ -26,7 +26,7 @@ export default function Navbar() {
         id={'navbar_right_section'}
         className={'flex flex-row items-center gap-2'}
       >
-        <button className={'secondary_medium'}>Save As Draft</button>
+        <button className={'secondary_medium'}>Exit</button>
         <button className={'primary_medium'}>Launch Automation</button>
       </div>
     </div>

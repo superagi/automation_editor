@@ -22,6 +22,7 @@ interface AlertIcons {
 }
 
 interface CommonIcons {
+  filterIcon: StaticImageData
   backArrow: StaticImageData
   linkedin: StaticImageData
   searchEmptyScreen: StaticImageData
@@ -35,6 +36,7 @@ interface CommonIcons {
   dragIcon: StaticImageData
   crossIcon: StaticImageData
   flagIcon: StaticImageData
+  addIcon: StaticImageData
 }
 
 export interface AppIcons {

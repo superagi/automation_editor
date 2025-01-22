@@ -34,6 +34,8 @@ import slackIcon from '@/assets/images/neutral/slack_icon.svg'
 import marketResearchIcon from '@/assets/images/neutral/market_research_icon.svg'
 import flagIcon from '@/assets/images/common/flag_icon.svg'
 import yellowAlert from '@/assets/images/alerts/yellow_alert.svg'
+import filterIcon from '@/assets/images/common/filter_icon.svg'
+import addIcon from '@/assets/images/common/add_icon.svg'
 
 export const imagePath: AppIcons = {
   selected: {
@@ -63,6 +65,7 @@ export const imagePath: AppIcons = {
     marketResearchIcon: marketResearchIcon,
   },
   common: {
+    filterIcon: filterIcon,
     backArrow: backArrow,
     linkedin: linkedin,
     searchEmptyScreen: searchEmptyScreen,
@@ -76,6 +79,7 @@ export const imagePath: AppIcons = {
     dragIcon: dragIcon,
     crossIcon: crossIcon,
     flagIcon: flagIcon,
+    addIcon: addIcon,
   },
   alert: {
     yellowAlert: yellowAlert,
