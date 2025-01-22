@@ -1,52 +1,7 @@
 import styles from './steps.module.css'
-import { NodeCategory } from '@/types'
 import imagePath from '@/constants/imagePath'
 import Image from 'next/image'
-
-const nodes: NodeCategory[] = [
-  {
-    type: 'engage',
-    label: 'Engage',
-    options: [
-      {
-        id: 'email',
-        label: 'Email',
-        icon: imagePath.unselected.email,
-        outputArray: [{ label: 'true' }],
-      },
-      {
-        id: 'linkedin_message',
-        label: 'Linkedin Message',
-        icon: imagePath.common.linkedin,
-        outputArray: [],
-      },
-      {
-        id: 'linkedin_in_mail',
-        label: 'Linkedin InMail',
-        icon: imagePath.common.linkedin,
-        outputArray: [],
-      },
-      {
-        id: 'linkedin_connections',
-        label: 'Linkedin Connections',
-        icon: imagePath.common.linkedin,
-        outputArray: [],
-      },
-    ],
-  },
-  {
-    type: 'crm',
-    label: 'CRM',
-    options: [
-      {
-        id: 'update_entity',
-        label: 'Update Entity',
-        icon: imagePath.unselected.updateEntity,
-        outputArray: [],
-      },
-    ],
-  },
-]
+import { nodes } from '@/constants/nodeConstants'
 
 export default function AutomationSteps() {
   const onDragStart = (event: React.DragEvent, option: any) => {
@@ -67,9 +22,9 @@ export default function AutomationSteps() {
         <span>Steps</span>
       </div>
 
-      <div className={'flex flex-col gap-2'}>
+      <div className={'flex flex-col'}>
         {nodes?.map((category, categoryIndex) => (
-          <div key={categoryIndex} className={'flex flex-col gap-2 py-4 px-2'}>
+          <div key={categoryIndex} className={'flex flex-col gap-2 py-3 px-2'}>
             <div className={'text-[13px] secondary_color'}>
               {category.label}
             </div>

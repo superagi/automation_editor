@@ -1,0 +1,9 @@
+.output_container {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--white-opacity-8);
+    background: var(--white-opacity-2);
+    font-family: "Proxima Nova", sans-serif;
+}

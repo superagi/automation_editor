@@ -19,21 +19,8 @@ export function UpdateEntityNode({ data, id }: UpdateEntityNodeProps) {
       outputs={outputs}
     >
       <div className="flex flex-col gap-2">
-        <select className="w-full bg-gray-700 p-2 rounded">
-          <option>Select Entity</option>
-          <option>Contact</option>
-          <option>Company</option>
-        </select>
-        <input
-          type="text"
-          placeholder="Field"
-          className="w-full bg-gray-700 p-2 rounded"
-        />
-        <input
-          type="text"
-          placeholder="Value"
-          className="w-full bg-gray-700 p-2 rounded"
-        />
+        <input type="text" placeholder="Field" className="input_medium" />
+        <input type="text" placeholder="Value" className="input_medium" />
       </div>
     </CustomNode>
   )

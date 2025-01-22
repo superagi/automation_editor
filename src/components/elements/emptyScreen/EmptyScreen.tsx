@@ -1,6 +1,6 @@
 import React from 'react'
 import { EmptyScreenProps } from './type'
-import { emptyScreenTypes } from '@/constants/searchConstatnts'
+import { emptyScreenTypes } from '@/constants/searchConstants'
 
 const EmptyScreen: React.FC<EmptyScreenProps> = ({
   source,

@@ -210,3 +210,53 @@ body {
 .secondary_large:disabled, .secondary_medium:disabled, .secondary_small:disabled {
   opacity: 0.2;
 }
+
+.input_medium,
+.input_medium_disabled,
+.textarea_medium,
+.textarea_large {
+  border-radius: 8px;
+  display: flex;
+  padding: 8px 12px;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  color: var(--foreground-rgb);
+  font-family: 'Proxima Nova', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: 1px solid var(--white-opacity-8);
+}
+
+.input_medium,
+.textarea_medium,
+.textarea_large {
+  background: var(--white-opacity-4);
+}
+
+.input_medium::placeholder,
+.textarea_medium::placeholder,
+.textarea_large::placeholder {
+  font-weight: 400;
+  color: var(--white-opacity-20);
+}
+
+.input_medium:disabled {
+  cursor: not-allowed;
+  color: var(--foreground-rgb);
+  border: 1px solid var(--white-opacity-8) !important;
+  background: var(--white-opacity-4);
+  opacity: 40%;
+}
+
+.textarea_medium {
+  height: 72px;
+  resize: none;
+}
+
+.textarea_large {
+  height: 142px;
+  resize: none;
+}

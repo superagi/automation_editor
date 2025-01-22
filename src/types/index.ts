@@ -1,9 +1,5 @@
 import { StaticImageData } from 'next/image'
 
-export interface OutputItem {
-  label: string
-}
-
 export interface NodeCategory {
   type: string
   label: string
@@ -13,11 +9,16 @@ export interface NodeCategory {
 export interface NodeOption {
   id:
     | 'email'
-    | 'linkedin_message'
-    | 'linkedin_in_mail'
-    | 'linkedin_connections'
+    | 'add_to_sequence'
+    | 'create_task'
+    | 'add_to_list'
+    | 'add_note'
     | 'update_entity'
+    | 'market_research'
+    | 'time_delay'
+    | 'if_else'
+    | 'email_notification'
+    | 'slack_notification'
   label: string
   icon: StaticImageData
-  outputArray: OutputItem[]
 }

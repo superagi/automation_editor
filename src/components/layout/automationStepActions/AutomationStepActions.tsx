@@ -1,10 +1,9 @@
 import styles from './action.module.css'
 import { useAutomation } from '@/context/AutomationContext'
 import { EmailAction } from '@/components/actions/EmailAction'
-import { LinkedinMessageAction } from '@/components/actions/LinkedinMessageAction'
-import { LinkedinInMailAction } from '@/components/actions/LinkedinInMailAction'
-import { LinkedinConnectionsAction } from '@/components/actions/LinkedinConnectionsAction'
 import { UpdateEntityAction } from '@/components/actions/UpdateEntityAction'
+import Image from 'next/image'
+import imagePath from '@/constants/imagePath'
 
 export default function AutomationStepActions() {
   const { selectedNode } = useAutomation()
@@ -16,12 +15,6 @@ export default function AutomationStepActions() {
     switch (selectedNode.id) {
       case 'email':
         return <EmailAction />
-      case 'linkedin_message':
-        return <LinkedinMessageAction />
-      case 'linkedin_in_mail':
-        return <LinkedinInMailAction />
-      case 'linkedin_connections':
-        return <LinkedinConnectionsAction />
       case 'update_entity':
         return <UpdateEntityAction />
       default:
@@ -32,14 +25,27 @@ export default function AutomationStepActions() {
   return (
     <div
       id={'automation_step_actions'}
-      className={`${styles.action_container} w-72 flex flex-col rounded-lg text-white`}
+      className={`${styles.action_container} flex flex-col rounded-lg text-white overflow-hidden`}
     >
-      <div className="border-b border-gray-700 p-4">
-        <h2 className="text-lg font-semibold">
-          {selectedNode ? selectedNode.label : 'Configuration'}
-        </h2>
+      <div className={'flex-shrink-0 border_bottom w-full'}>
+        <div
+          className={
+            'flex flex-row items-center gap-1 py-3 px-4 overflow-hidden'
+          }
+        >
+          <Image
+            className={'size-4'}
+            src={selectedNode?.icon || imagePath.common.linkedin}
+            alt={`${selectedNode?.id}_icon`}
+          />
+
+          <span className="text-sm font-semibold truncate">
+            {selectedNode ? selectedNode.label : 'Configuration'}
+          </span>
+        </div>
       </div>
-      {renderAction()}
+
+      <div className="flex-1 overflow-y-auto w-full">{renderAction()}</div>
     </div>
   )
 }
