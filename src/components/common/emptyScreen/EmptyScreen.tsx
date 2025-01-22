@@ -1,6 +1,6 @@
 import React from 'react'
 import { EmptyScreenProps } from './type'
-import { emptyScreenTypes } from '@/constants/searchConstatnts'
+import { emptyScreenTypes } from '@/constants/searchConstants'
 import imagePath from '@/constants/imagePath'
 import Image from 'next/image'
 
