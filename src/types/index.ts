@@ -22,4 +22,5 @@ export interface NodeOption {
     | 'trigger'
   label: string
   icon: StaticImageData
+  size: Number
 }

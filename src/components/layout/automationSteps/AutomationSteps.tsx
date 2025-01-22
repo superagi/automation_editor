@@ -39,12 +39,12 @@ export default function AutomationSteps() {
                 >
                   <div className={'flex flex-row items-center gap-2'}>
                     <Image
-                      className={'size-4'}
-                      src={option.icon}
-                      alt={`${option.id}_icon`}
+                      className={`w-[${option?.size}px] h-[${option?.size}px]`}
+                      src={option?.icon}
+                      alt={`${option?.id}_icon`}
                     />
                     <span className={'text-sm font-semibold'}>
-                      {option.label}
+                      {option?.label}
                     </span>
                   </div>
 
