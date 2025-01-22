@@ -17,6 +17,10 @@ interface NeutralIcons {
   marketResearchIcon: StaticImageData
 }
 
+interface AlertIcons {
+  yellowAlert: StaticImageData
+}
+
 interface EmptyScreenIcons {
   emptyScreen: StaticImageData
   searchEmptyScreen: StaticImageData
@@ -46,4 +50,5 @@ export interface AppIcons {
   unselected: IconSet
   neutral: NeutralIcons
   common: CommonIcons
+  alert: AlertIcons
 }

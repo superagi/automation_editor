@@ -4,26 +4,27 @@ import { InfoItem } from '@/components/common/infoComponents/InfoItem'
 import imagePath from '@/constants/imagePath'
 import CustomNode from '@/components/common/CustomNode/CustomNode'
 
-interface TriggerNodeProps {
+interface IfElseNodeProps {
   id: string
   data: NodeOption
 }
 
-export function TriggerNode({ data, id }: TriggerNodeProps) {
-  const [triggerEvent, setTriggerEvent] = useState('')
+export function IfElseNode({ data, id }: IfElseNodeProps) {
+  const [filters, setFilters] = useState('')
 
   return (
     <CustomNode
       id={id}
       data={data}
-      title="Trigger"
-      icon={imagePath.common.triggerNodeTitleIcon}
+      title="If / else"
+      icon={imagePath.selected.list}
+      outputs={['Is True', 'Is False']}
     >
-      <div id={'trigger_node_content'} className={'flex flex-col'}>
+      <div id={'if_else_node_content'} className={'flex flex-col'}>
         <InfoItem
-          source={'trigger_node'}
-          title={'Trigger event'}
-          value={triggerEvent}
+          source={'if_else_node'}
+          title={'Filters'}
+          value={`${filters?.length} filters`}
         />
       </div>
     </CustomNode>

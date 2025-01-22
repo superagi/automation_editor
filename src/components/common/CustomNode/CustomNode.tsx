@@ -9,7 +9,7 @@ interface CustomNodeProps {
   children: React.ReactNode
   title: string
   icon: any
-  outputs: string[]
+  outputs?: string[]
   id: string
 }
 
@@ -18,7 +18,7 @@ export default function CustomNode({
   children,
   title,
   icon,
-  outputs,
+  outputs = ['Next'],
   id,
 }: CustomNodeProps) {
   const selectedNodes = useStore((state) =>
@@ -64,27 +64,32 @@ export default function CustomNode({
         </div>
       )}
 
-      <div id={`${data.id}_custom_node_footer`} className={'flex flex-col'}>
+      <div
+        id={`${data.id}_custom_node_footer`}
+        className={'flex flex-col gap-1 p-2'}
+      >
         {outputs.map((output, index) => (
           <div
             key={index}
-            className={
-              'flex flex-row items-center justify-end relative group py-3 px-4'
-            }
+            className={`${styles.node_footer_option} flex flex-row items-center justify-between relative cursor-pointer`}
           >
-            <span className={'text-[13px] opacity-80'}>{output}</span>
-
-            <Handle
-              type="source"
-              position={Position.Right}
-              id={output}
-              style={{
-                right: -6,
-                background: 'var(--foreground-rgb)',
-                width: '8px',
-                height: '8px',
-              }}
-            />
+            <span className={'text-sm px-2 py-[6px]'}>{output}</span>
+            <div className={styles.handle_wrapper}>
+              <Handle
+                type="source"
+                position={Position.Right}
+                id={output}
+                style={{
+                  position: 'relative',
+                  right: 0,
+                  top: 0,
+                  transform: 'none',
+                  background: 'var(--foreground-rgb)',
+                  width: '8px',
+                  height: '8px',
+                }}
+              />
+            </div>
           </div>
         ))}
       </div>

@@ -10,3 +10,23 @@
 .selected {
     border: 2px solid var(--white-opacity-60);
 }
+
+.node_footer_option {
+    border: 1px solid var(--white-opacity-8);
+    background: var(--white-opacity-8);
+    border-radius: 8px;
+    transition: background 0.2s ease;
+}
+
+.node_footer_option:hover {
+    background: var(--white-opacity-16);
+}
+
+.handle_wrapper {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+}
