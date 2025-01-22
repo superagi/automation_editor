@@ -1,0 +1,192 @@
+.dropdown_container {
+  position: relative;
+  display: inline-block;
+  height: fit-content;
+}
+
+.trigger_container {
+  display: inline-block;
+}
+
+.dropdown {
+  position: var(--dropdown-position, absolute);
+  color: #fff;
+  border-radius: 8px;
+  background: var(--dropdown-bg);
+  box-shadow: var(--dropdown-boxshadow);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  opacity: 0;
+  animation: fade_in 0.3s forwards;
+  width: max-content;
+  z-index: 10;
+}
+
+.dropdown.bottom_center {
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fade_in_center 0.3s forwards;
+}
+
+.dropdown.top,
+.dropdown.top_start,
+.dropdown.top_end {
+  animation: fade_in_top 0.3s forwards;
+}
+
+.dropdown.left {
+  animation: fade_in_left 0.3s forwards;
+}
+
+.dropdown.right {
+  animation: fade_in_right 0.3s forwards;
+}
+
+.dropdown.bottom_center.fade_out {
+  animation: fade_out_center 0.3s forwards;
+}
+
+.dropdown.top.fade_out,
+.dropdown.top_start.fade_out,
+.dropdown.top_end.fade_out {
+  animation: fade_out_top 0.3s forwards;
+}
+
+.dropdown.left.fade_out {
+  animation: fade_out_left 0.3s forwards;
+}
+
+.dropdown.right.fade_out {
+  animation: fade_out_right 0.3s forwards;
+}
+
+@keyframes fade_in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade_out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade_in_center {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) translateX(-50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+@keyframes fade_out_center {
+  from {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-10px) translateX(-50%);
+  }
+}
+
+@keyframes fade_in_top {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade_out_top {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fade_in_left {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade_out_left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+}
+
+@keyframes fade_in_right {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade_out_right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+}
+
+.fade_out:not(.center, .top, .topstart, .topend, .left, .right) {
+  animation: fade_out 0.3s forwards;
+}
+
+.dropdown_disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed !important;
+}

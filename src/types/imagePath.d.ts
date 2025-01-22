@@ -20,8 +20,17 @@ interface NeutralIcons {
 interface CommonIcons {
   backArrow: StaticImageData
   linkedin: StaticImageData
+  searchEmptyScreen: StaticImageData
+  chartAndTableEmptyScreen: StaticImageData
+  callLogsEmptyScreen: StaticImageData
+  callQualityEmptyScreen: StaticImageData
+  emptyScreen: StaticImageData
+  closeIcon: StaticImageData
+  tableLoader: StaticImageData
+  chartLoader: StaticImageData
   dragIcon: StaticImageData
   crossIcon: StaticImageData
+  flagIcon: StaticImageData
 }
 
 export interface AppIcons {

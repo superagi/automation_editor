@@ -19,6 +19,7 @@ export interface NodeOption {
     | 'if_else'
     | 'email_notification'
     | 'slack_notification'
+    | 'trigger'
   label: string
   icon: StaticImageData
 }
