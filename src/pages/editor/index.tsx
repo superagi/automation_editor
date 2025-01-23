@@ -1,11 +1,11 @@
-'use client'
+import React from 'react'
 
 import { AutomationProvider } from '@/context/AutomationContext'
 import Canvas from '@/components/layout/Canvas'
 import AutomationSteps from '@/components/layout/automationSteps/AutomationSteps'
 import AutomationStepActions from '@/components/layout/automationStepActions/AutomationStepActions'
 
-export default function FlowEditor() {
+const FlowEditor: React.FC = () => {
   return (
     <AutomationProvider>
       <div id={'automation_editor'} className={'flex w-full h-full'}>
@@ -22,3 +22,5 @@ export default function FlowEditor() {
     </AutomationProvider>
   )
 }
+
+export default FlowEditor

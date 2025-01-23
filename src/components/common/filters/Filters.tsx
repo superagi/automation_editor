@@ -2,9 +2,10 @@ import { Button, Select } from 'antd'
 import Image from 'next/image'
 import styles from './filters.module.css'
 import imagePath from '@/constants/imagePath'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
-export function Filters({ source }: { source: string }) {
+// @ts-ignore
+const Filters: React.FC = ({ source }: { source: string }) => {
   const [showFilters, setShowFilters] = useState(false)
   const [filters, setFilters] = useState<any[]>([])
   const options = [
@@ -150,3 +151,5 @@ export function Filters({ source }: { source: string }) {
     </div>
   )
 }
+
+export default Filters
