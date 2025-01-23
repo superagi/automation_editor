@@ -40,6 +40,11 @@ import yellowAlert from '@/assets/images/alerts/yellow_alert.svg'
 import filterIcon from '@/assets/images/common/filter_icon.svg'
 import addIcon from '@/assets/images/common/add_icon.svg'
 import warningIcon from '@/assets/images/common/warning_icon.svg'
+import sortingArrowSelected from '@/assets/images/selected/sorting_arrow.svg'
+import sortingArrowUnselected from '@/assets/images/unselected/sorting_arrow.svg'
+import leftArrow from '@/assets/images/common/left_arrow.svg'
+import rightArrow from '@/assets/images/common/right_arrow.svg'
+import downArrow from '@/assets/images/common/down_arrow.svg'
 export const imagePath: AppIcons = {
   selected: {
     email: emailSelected,
@@ -51,6 +56,7 @@ export const imagePath: AppIcons = {
     timeDelay: timeDelaySelected,
     ifElse: ifElseSelected,
     emailNotification: emailNotificationSelected,
+    sortingArrow: sortingArrowSelected,
   },
   unselected: {
     email: emailUnselected,
@@ -62,6 +68,7 @@ export const imagePath: AppIcons = {
     timeDelay: timeDelayUnselected,
     ifElse: ifElseUnselected,
     emailNotification: emailNotificationUnselected,
+    sortingArrow: sortingArrowUnselected,
   },
   neutral: {
     slackIcon: slackIcon,
@@ -89,6 +96,9 @@ export const imagePath: AppIcons = {
     infoIcon: infoIcon,
     warningIcon: warningIcon,
     addIcon: addIcon,
+    leftArrow: leftArrow,
+    rightArrow: rightArrow,
+    downArrow: downArrow,
   },
   alert: {
     yellowAlert: yellowAlert,
