@@ -1,6 +1,7 @@
 import '@/styles/_app.css'
 import Navbar from '@/components/layout/navbar/Navbar'
 import { AntdRegistry } from '@ant-design/nextjs-registry'
+import '@ant-design/v5-patch-for-react-19'
 
 export const metadata = {
   title: 'SuperSales',

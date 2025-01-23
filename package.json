@@ -23,6 +23,7 @@
     "reactflow": "^11.11.4"
   },
   "devDependencies": {
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20.17.14",
     "@types/quill": "^2.0.14",
