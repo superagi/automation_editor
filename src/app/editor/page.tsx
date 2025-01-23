@@ -4,6 +4,7 @@ import { AutomationProvider } from '@/context/AutomationContext'
 import Canvas from '@/components/layout/Canvas'
 import AutomationSteps from '@/components/layout/automationSteps/AutomationSteps'
 import AutomationStepActions from '@/components/layout/automationStepActions/AutomationStepActions'
+import { ReactFlowProvider } from 'reactflow'
 
 export default function FlowEditor() {
   return (
@@ -12,9 +13,9 @@ export default function FlowEditor() {
         <div id={'automation_editor_steps'} className={'pl-3 py-3'}>
           <AutomationSteps />
         </div>
-
-        <Canvas />
-
+        <ReactFlowProvider>
+          <Canvas />
+        </ReactFlowProvider>
         <div id={'automation_editor_step_actions'} className={'pr-3 py-3'}>
           <AutomationStepActions />
         </div>

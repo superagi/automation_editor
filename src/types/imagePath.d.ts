@@ -10,6 +10,7 @@ interface IconSet {
   timeDelay: StaticImageData
   ifElse: StaticImageData
   emailNotification: StaticImageData
+  sortingArrow: StaticImageData
 }
 
 interface NeutralIcons {
@@ -22,7 +23,6 @@ interface AlertIcons {
 }
 
 interface EmptyScreenIcons {
-  filterIcon: StaticImageData
   emptyScreen: StaticImageData
   searchEmptyScreen: StaticImageData
   chartAndTableEmptyScreen: StaticImageData
@@ -31,6 +31,7 @@ interface EmptyScreenIcons {
 }
 
 interface CommonIcons {
+  filterIcon: StaticImageData
   emptyScreenIcons: EmptyScreenIcons
   backArrow: StaticImageData
   linkedin: StaticImageData
@@ -45,6 +46,9 @@ interface CommonIcons {
   infoIcon: StaticImageData
   warningIcon: StaticImageData
   addIcon: StaticImageData
+  leftArrow: StaticImageData
+  rightArrow: StaticImageData
+  downArrow: StaticImageData
 }
 
 export interface AppIcons {
