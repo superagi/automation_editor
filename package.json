@@ -11,16 +11,22 @@
     "lint:css:fix": "stylelint '**/*.{css,scss,sass,vue,html,jsx,tsx}' --fix"
   },
   "dependencies": {
+    "@ant-design/nextjs-registry": "^1.0.2",
     "antd": "^5.23.1",
+    "dompurify": "^3.2.3",
     "next": "15.1.4",
     "postcss-styled-syntax": "^0.7.0",
+    "quill": "^2.0.3",
+    "quill-image-resize": "^3.0.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "reactflow": "^11.11.4"
   },
   "devDependencies": {
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20.17.14",
+    "@types/quill": "^2.0.14",
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@types/stylelint": "^14.0.0",

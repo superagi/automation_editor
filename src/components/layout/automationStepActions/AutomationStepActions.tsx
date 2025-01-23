@@ -10,12 +10,8 @@ export default function AutomationStepActions() {
   const { selectedNode } = useAutomation()
 
   const renderAction = () => {
-    if (!selectedNode)
-      return <div className="p-4">Select a node to configure</div>
-
+    if (!selectedNode || selectedNode.id === 'trigger') return <TriggerAction />
     switch (selectedNode.id) {
-      case 'trigger':
-        return <TriggerAction />
       case 'email':
         return <EmailAction />
       case 'update_entity':

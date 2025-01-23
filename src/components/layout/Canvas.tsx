@@ -17,6 +17,7 @@ import { nodeTypes } from '@/types/nodeTypes'
 import { useAutomation } from '@/context/AutomationContext'
 import { NodeOption } from '@/types'
 import styles from './Canvas.module.css'
+import imagePath from '@/constants/imagePath'
 
 export default function Canvas() {
   const [isAnimated, setIsAnimated] = useState<boolean>(false)
@@ -28,16 +29,27 @@ export default function Canvas() {
       position: { x: 100, y: 100 },
       data: {
         id: 'trigger',
-        title: 'Start Here',
+        label: 'Trigger',
+        icon: imagePath.common.triggerNodeTitleIcon,
+        size: 16,
       },
     },
   ])
   const [edges, setEdges, onEdgesChange] = useEdgesState([])
   const { setSelectedNode } = useAutomation()
 
-  const onInit = useCallback((instance: ReactFlowInstance) => {
-    reactFlowInstance.current = instance
-  }, [])
+  const onInit = useCallback(
+    (instance: ReactFlowInstance) => {
+      reactFlowInstance.current = instance
+
+      // Automatically set the trigger node as the selected node on initialization
+      const triggerNode = nodes.find((node) => node.id === 'trigger_node_1')
+      if (triggerNode) {
+        setSelectedNode(triggerNode.data as NodeOption)
+      }
+    },
+    [nodes, setSelectedNode]
+  )
 
   const onConnect = useCallback(
     (params: Edge | Connection) => setEdges((eds) => addEdge(params, eds)),

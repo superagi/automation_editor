@@ -77,7 +77,7 @@
     ),
     #131315;
   --node-container-boxshadow: -16px 16px 80px 0 rgb(0 0 0 / 40%);
-  --yellow-alert: #FBBC04;
+  --yellow-alert: #fbbc04;
 }
 
 html,
@@ -297,7 +297,7 @@ body {
   color: var(--foreground-rgb);
   border: 1px solid var(--white-opacity-8) !important;
   background: var(--white-opacity-4);
-  opacity: 40%;
+  opacity: 0.4;
 }
 
 .textarea_medium {
@@ -312,7 +312,9 @@ body {
 
 /* ------------------ ANTD Library Changes (Restricted Actions here onwards) ------------------ */
 
-.ant-select-selector, .ant-picker, .ant-input-number {
+.ant-select-selector,
+.ant-picker,
+.ant-input-number {
   background: var(--white-opacity-4) !important;
   border: 1px solid var(--white-opacity-8) !important;
   box-shadow: none !important;
@@ -321,7 +323,7 @@ body {
 }
 
 .ant-select-disabled {
-  opacity: 20% !important;
+  opacity: 0.2 !important;
 }
 
 .ant-switch-small .ant-switch-handle::before {
@@ -350,7 +352,8 @@ body {
   background-color: var(--white-opacity-12) !important;
 }
 
-.ant-picker-suffix, .ant-input-number-input {
+.ant-picker-suffix,
+.ant-input-number-input {
   color: var(--foreground-rgb) !important;
 }
 
@@ -368,7 +371,7 @@ body {
 
 .ant-select-item-empty {
   color: var(--foreground-rgb) !important;
-  opacity: 30%;
+  opacity: 0.3;
   cursor: not-allowed;
 }
 
@@ -379,20 +382,27 @@ body {
 
 .ant-select-dropdown {
   border-radius: 8px !important;
-  background-color: #1D1D20 !important;
-  box-shadow: -2px 2px 24px 0 rgba(0, 0, 0, 0.40) !important;
+  background-color: #1d1d20 !important;
+  box-shadow: -2px 2px 24px 0 rgb(0 0 0 / 40%) !important;
   color: var(--foreground-rgb) !important;
 }
 
+.ant-select-item-option {
+  color: var(--foreground-rgb) !important;
+  font-family: 'Proxima Nova', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
 
 .ant-select-item-option:last-child {
   margin-bottom: 0 !important;
 }
 
-.ant-select-item-option-selected, .ant-select-item-option-active {
+.ant-select-item-option-selected,
+.ant-select-item-option-active {
   border-radius: 8px !important;
   color: var(--foreground-rgb) !important;
-  font-family: "Proxima Nova", sans-serif !important;
+  font-family: 'Proxima Nova', sans-serif !important;
   font-size: 14px !important;
   font-weight: 400 !important;
 }
@@ -405,19 +415,12 @@ body {
   background: var(--white-opacity-8) !important;
 }
 
-.ant-select-item-option {
-  color: var(--foreground-rgb) !important;
-  font-family: "Proxima Nova", sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-}
-
 .ant-select-multiple .ant-select-selection-item {
   border-radius: 16px !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgb(255 255 255 / 8%) !important;
+  background: rgb(255 255 255 / 14%) !important;
   color: var(--foreground-rgb) !important;
-  font-family: "Proxima Nova", sans-serif !important;
+  font-family: 'Proxima Nova', sans-serif !important;
   font-size: 11px !important;
   font-weight: 400 !important;
 }
@@ -442,8 +445,8 @@ body {
 }
 
 .ant-select-item.ant-select-item-group {
-  color: rgba(255, 255, 255, 0.60) !important;
-  font-family: "Proxima Nova", serif;
+  color: rgb(255 255 255 / 60%) !important;
+  font-family: 'Proxima Nova', serif;
   font-size: 11px;
   font-style: normal;
   font-weight: 600;
@@ -471,22 +474,32 @@ body {
   border-color: var(--foreground-rgb) !important;
 }
 
-.ant-checkbox-indeterminate .ant-checkbox-inner:after {
+.ant-checkbox-indeterminate .ant-checkbox-inner::after {
   background-color: var(--foreground-rgb) !important;
 }
 
 .ant-picker-panel {
   border-radius: 8px !important;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15) !important;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.02) 100%), #131315 !important;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 15%) !important;
+  background: linear-gradient(
+      0deg,
+      rgb(255 255 255 / 2%) 0%,
+      rgb(255 255 255 / 2%) 100%
+    ),
+    #131315 !important;
 }
 
-.ant-picker-super-prev-icon, .ant-picker-super-next-icon, .ant-picker-header-prev-btn, .ant-picker-header-next-btn {
+.ant-picker-super-prev-icon,
+.ant-picker-super-next-icon,
+.ant-picker-header-prev-btn,
+.ant-picker-header-next-btn {
   color: white !important;
-  opacity: 20% !important;
+  opacity: 0.2 !important;
 }
 
-.ant-picker-month-btn, .ant-picker-year-btn, .ant-picker-decade-btn {
+.ant-picker-month-btn,
+.ant-picker-year-btn,
+.ant-picker-decade-btn {
   color: white !important;
 }
 
@@ -497,21 +510,26 @@ body {
 
 .ant-picker-cell-inner {
   color: white !important;
-  font-family: "Roboto", sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
 }
 
-.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-cell-inner, .ant-picker-cell-inner:hover {
+.ant-picker-cell-inner:hover
+  .ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-selected
+  .ant-picker-cell-inner {
   border-radius: 4px !important;
-  background: #FFF !important;
+  background: #fff !important;
   color: #000 !important;
 }
 
-.ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before {
-  border: 1px solid #FFFFFF;
+.ant-picker-dropdown
+  .ant-picker-cell-in-view.ant-picker-cell-today
+  .ant-picker-cell-inner::before {
+  border: 1px solid #fff;
 }
 
 .ant-picker-header {
@@ -519,7 +537,7 @@ body {
 }
 
 .ant-picker-dropdown .ant-picker-cell-disabled {
-  opacity: 40%;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 

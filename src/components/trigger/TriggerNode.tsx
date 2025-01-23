@@ -17,7 +17,7 @@ export function TriggerNode({ data, id }: TriggerNodeProps) {
       id={id}
       data={data}
       title="Trigger"
-      icon={imagePath.common.flagIcon}
+      icon={imagePath.common.triggerNodeTitleIcon}
     >
       <div id={'trigger_node_content'} className={'flex flex-col'}>
         <InfoItem

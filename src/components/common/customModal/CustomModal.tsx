@@ -6,7 +6,7 @@ import { ModalProps } from './type'
 import Image from 'next/image'
 import imagePath from '@/constants/imagePath'
 
-const Modal: React.FC<ModalProps> = ({
+const CustomModal: React.FC<ModalProps> = ({
   title,
   visible,
   width = '400px',
@@ -97,4 +97,4 @@ const Modal: React.FC<ModalProps> = ({
   return createPortal(modalContent, document.body)
 }
 
-export default Modal
+export default CustomModal

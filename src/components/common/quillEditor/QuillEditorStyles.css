@@ -1,0 +1,127 @@
+.ql-editor.ql-blank {
+  min-height: 250px;
+}
+
+.ql-toolbar.ql-snow {
+  margin-left: 3px;
+  width: 100%;
+  border: none !important;
+  padding: 8px 0;
+}
+
+.ql-editor p,
+.ql-editor h1,
+.ql-editor h2,
+.ql-editor h3,
+.ql-editor h4,
+.ql-editor h5,
+.ql-editor h6 {
+  margin: 0;
+}
+
+.ql-snow .ql-stroke {
+  stroke: #fff !important;
+}
+
+.ql-snow .ql-fill,
+.ql-snow .ql-stroke.ql-fill {
+  fill: #fff !important;
+}
+
+.ql-snow .ql-picker {
+  color: #fff !important;
+}
+
+.ql-snow .ql-active .ql-stroke {
+  stroke: #fff !important;
+}
+
+.ql-formats button {
+  opacity: 1 !important;
+}
+
+.ql-snow .ql-picker-options {
+  background-color: #2c2c2c !important;
+  border: 1px solid #444 !important;
+  border-radius: 8px !important;
+}
+
+.ql-snow .ql-picker-label {
+  color: #fff !important;
+}
+
+.ql-snow .ql-picker-item {
+  color: #fff !important;
+  padding: 4px !important;
+  cursor: pointer;
+}
+
+.ql-snow .ql-picker-item:hover,
+.ql-snow .ql-picker-item.ql-selected {
+  color: #00a8ff !important;
+  background-color: #3a3a3a !important;
+  border-radius: 8px !important;
+  padding: 4px !important;
+}
+
+.ql-snow .ql-picker-label::before {
+  border-color: #fff transparent transparent !important;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-label {
+  border-color: #444 !important;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  border-color: #444 !important;
+}
+
+.ql-snow .ql-toolbar button.ql-active,
+.ql-snow.ql-toolbar button.ql-active {
+  background-color: #3a3a3a !important;
+  border-radius: 4px !important;
+}
+
+.ql-snow .ql-toolbar button:hover,
+.ql-snow.ql-toolbar button:hover {
+  background-color: #3a3a3a !important;
+  border-radius: 4px !important;
+}
+
+.image-resizer {
+  display: block;
+  position: absolute;
+  border: 1px dashed #444;
+}
+
+.image-resizer .resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #2c2c2c;
+  border: 1px solid #444;
+}
+
+.image-resizer .ne {
+  top: -5px;
+  right: -5px;
+  cursor: ne-resize;
+}
+
+.image-resizer .nw {
+  top: -5px;
+  left: -5px;
+  cursor: nw-resize;
+}
+
+.image-resizer .se {
+  bottom: -5px;
+  right: -5px;
+  cursor: se-resize;
+}
+
+.image-resizer .sw {
+  bottom: -5px;
+  left: -5px;
+  cursor: sw-resize;
+}

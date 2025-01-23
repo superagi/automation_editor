@@ -21,21 +21,29 @@ interface AlertIcons {
   yellowAlert: StaticImageData
 }
 
-interface CommonIcons {
+interface EmptyScreenIcons {
   filterIcon: StaticImageData
-  backArrow: StaticImageData
-  linkedin: StaticImageData
+  emptyScreen: StaticImageData
   searchEmptyScreen: StaticImageData
   chartAndTableEmptyScreen: StaticImageData
   callLogsEmptyScreen: StaticImageData
   callQualityEmptyScreen: StaticImageData
-  emptyScreen: StaticImageData
+}
+
+interface CommonIcons {
+  emptyScreenIcons: EmptyScreenIcons
+  backArrow: StaticImageData
+  linkedin: StaticImageData
   closeIcon: StaticImageData
   tableLoader: StaticImageData
   chartLoader: StaticImageData
   dragIcon: StaticImageData
   crossIcon: StaticImageData
-  flagIcon: StaticImageData
+  triggerNodeTitleIcon: StaticImageData
+  downloadIcon: StaticImageData
+  attachFileIcon: StaticImageData
+  infoIcon: StaticImageData
+  warningIcon: StaticImageData
   addIcon: StaticImageData
 }
 
