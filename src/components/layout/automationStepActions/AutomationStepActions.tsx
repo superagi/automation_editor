@@ -1,10 +1,10 @@
 import styles from './action.module.css'
 import { useAutomation } from '@/context/AutomationContext'
-import { EmailAction } from '@/components/actions/EmailAction'
-import { UpdateEntityAction } from '@/components/actions/UpdateEntityAction'
+import { EmailAction } from '@/components/engage/email/EmailAction'
+import { UpdateEntityAction } from '@/components/crm/entity/UpdateEntityAction'
 import Image from 'next/image'
 import imagePath from '@/constants/imagePath'
-import { TriggerAction } from '@/components/actions/TriggerAction'
+import { TriggerAction } from '@/components/trigger/TriggerAction'
 
 export default function AutomationStepActions() {
   const { selectedNode } = useAutomation()
