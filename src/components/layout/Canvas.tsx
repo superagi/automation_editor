@@ -88,7 +88,6 @@ export default function Canvas() {
     setIsAnimated((prev) => {
       const newAnimatedState = !prev
 
-      // Update the edges with the new animated state
       setEdges((prevEdges) =>
         prevEdges.map((edge) => ({
           ...edge,

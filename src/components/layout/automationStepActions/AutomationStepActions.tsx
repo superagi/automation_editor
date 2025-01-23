@@ -1,9 +1,10 @@
 import styles from './action.module.css'
 import { useAutomation } from '@/context/AutomationContext'
-import { EmailAction } from '@/components/actions/EmailAction'
-import { UpdateEntityAction } from '@/components/actions/UpdateEntityAction'
+import { EmailAction } from '@/components/engage/email/EmailAction'
+import { UpdateEntityAction } from '@/components/crm/entity/UpdateEntityAction'
 import Image from 'next/image'
 import imagePath from '@/constants/imagePath'
+import { TriggerAction } from '@/components/trigger/TriggerAction'
 
 export default function AutomationStepActions() {
   const { selectedNode } = useAutomation()
@@ -13,6 +14,8 @@ export default function AutomationStepActions() {
       return <div className="p-4">Select a node to configure</div>
 
     switch (selectedNode.id) {
+      case 'trigger':
+        return <TriggerAction />
       case 'email':
         return <EmailAction />
       case 'update_entity':
@@ -45,7 +48,9 @@ export default function AutomationStepActions() {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto w-full">{renderAction()}</div>
+      <div className="flex-1 overflow-y-auto min-w-0 w-full">
+        <div className="p-4 max-w-full">{renderAction()}</div>
+      </div>
     </div>
   )
 }

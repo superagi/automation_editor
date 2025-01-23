@@ -22,6 +22,7 @@ interface AlertIcons {
 }
 
 interface EmptyScreenIcons {
+  filterIcon: StaticImageData
   emptyScreen: StaticImageData
   searchEmptyScreen: StaticImageData
   chartAndTableEmptyScreen: StaticImageData
@@ -43,6 +44,7 @@ interface CommonIcons {
   attachFileIcon: StaticImageData
   infoIcon: StaticImageData
   warningIcon: StaticImageData
+  addIcon: StaticImageData
 }
 
 export interface AppIcons {

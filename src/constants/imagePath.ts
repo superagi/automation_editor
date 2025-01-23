@@ -37,6 +37,8 @@ import downloadIcon from '@/assets/images/common/download_icon.svg'
 import attachFileIcon from '@/assets/images/common/attach_file_icon.svg'
 import infoIcon from '@/assets/images/common/info_icon.svg'
 import yellowAlert from '@/assets/images/alerts/yellow_alert.svg'
+import filterIcon from '@/assets/images/common/filter_icon.svg'
+import addIcon from '@/assets/images/common/add_icon.svg'
 import warningIcon from '@/assets/images/common/warning_icon.svg'
 export const imagePath: AppIcons = {
   selected: {
@@ -66,6 +68,7 @@ export const imagePath: AppIcons = {
     marketResearchIcon: marketResearchIcon,
   },
   common: {
+    filterIcon: filterIcon,
     emptyScreenIcons: {
       emptyScreen: emptyScreen,
       searchEmptyScreen: searchEmptyScreen,
@@ -85,6 +88,7 @@ export const imagePath: AppIcons = {
     crossIcon: crossIcon,
     infoIcon: infoIcon,
     warningIcon: warningIcon,
+    addIcon: addIcon,
   },
   alert: {
     yellowAlert: yellowAlert,

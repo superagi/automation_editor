@@ -1,12 +1,12 @@
-import { EmailNode } from '@/components/nodes/EmailNode'
-import { UpdateEntityNode } from '@/components/nodes/UpdateEntityNode'
-import { TriggerNode } from '@/components/nodes/TriggerNode'
-import { AddToSequenceNode } from '@/components/nodes/AddToSequenceNode'
-import { CreateTaskNode } from '@/components/nodes/CreateTaskNode'
-import { AddToListNode } from '@/components/nodes/AddToListNode'
-import { MarketResearchNode } from '@/components/nodes/MarketResearchNode'
-import { TimeDelayNode } from '@/components/nodes/TimeDelayNode'
-import { IfElseNode } from '@/components/nodes/IfElseNode'
+import { EmailNode } from '@/components/engage/email/EmailNode'
+import { UpdateEntityNode } from '@/components/crm/entity/UpdateEntityNode'
+import { TriggerNode } from '@/components/trigger/TriggerNode'
+import { AddToSequenceNode } from '@/components/engage/sequence/AddToSequenceNode'
+import { CreateTaskNode } from '@/components/crm/task/CreateTaskNode'
+import { AddToListNode } from '@/components/crm/list/AddToListNode'
+import { MarketResearchNode } from '@/components/crm/market_research/MarketResearchNode'
+import { TimeDelayNode } from '@/components/operation/time_delay/TimeDelayNode'
+import { IfElseNode } from '@/components/operation/if_else/IfElseNode'
 
 export const nodeTypes = {
   trigger: TriggerNode,
