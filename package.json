@@ -14,7 +14,7 @@
     "@ant-design/nextjs-registry": "^1.0.2",
     "antd": "^5.23.1",
     "dompurify": "^3.2.3",
-    "next": "15.1.4",
+    "next": "15.5.18",
     "postcss-styled-syntax": "^0.7.0",
     "quill": "^2.0.3",
     "quill-image-resize": "^3.0.9",
